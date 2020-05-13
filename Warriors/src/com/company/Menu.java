@@ -2,6 +2,8 @@ package com.company;
 import java.util.Scanner;
 
 public class Menu {
+    private int dice;
+
     public void display(){
         System.out.println("Create new perso");
         System.out.println("Quit game");
@@ -69,10 +71,22 @@ public class Menu {
         }
     }
 
+    public int giveDice(int min, int max)
+    {
+        return (int) Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     public void play() {
         int player = 1;
         int plateau = 64;
-        int dice;
+
+        int tour = 0;
+        do {
+            tour = tour + 1;
+            this.dice = this.giveDice(1, 6);
+            player += this.dice;
+            System.out.println("Le joueur est sur la case " + player);
+        } while (player<plateau);
     }
 
     public void quit(){

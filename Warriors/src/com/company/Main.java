@@ -18,6 +18,8 @@ public class Main {
         Perso perso = menu.createPerso(sc, persoType, persoName);
 // Afficher les infos du perso en récupérant l'objet perso et le Scanner en paramètres.
         menu.displayPerso(perso, sc);
+// Lancer la partie
+        menu.play();
     }
 }
 
