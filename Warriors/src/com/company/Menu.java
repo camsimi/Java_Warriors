@@ -76,7 +76,7 @@ public class Menu {
         return (int) Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    public void play() {
+    public void play(Scanner input) {
         int player = 1;
         int plateau = 64;
 
@@ -84,9 +84,17 @@ public class Menu {
         do {
             tour = tour + 1;
             this.dice = this.giveDice(1, 6);
-            player += this.dice;
-            System.out.println("Le joueur est sur la case " + player);
-        } while (player<plateau);
+            if (this.dice + player > plateau) {
+                player = plateau;
+            } else {
+                player += this.dice;
+            }
+            System.out.println("Le joueur est sur la case " + player + "/64");
+            if (player == plateau) {
+                System.out.println("Tu as gagné!");
+                this.chooseMenu(input);
+            }
+        } while (player<=plateau);
     }
 
     public void quit(){
