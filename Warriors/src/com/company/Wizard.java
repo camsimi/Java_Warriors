@@ -1,7 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
-public class Wizard {
+public class Wizard extends Perso{
     private String name;
     private int life;
     private int strength;
@@ -74,7 +74,15 @@ public class Wizard {
         }
     }
 
-//    public void setSpell(int spell) {
+    @Override
+    public String toString() {
+        return "Wizard{" +
+                "name='" + name + '\'' +
+                ", life=" + life +
+                ", strength=" + strength +
+                '}';
+    }
+    //    public void setSpell(int spell) {
 //        this.spell = spell;
 //    }
 //

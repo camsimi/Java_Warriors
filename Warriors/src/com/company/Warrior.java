@@ -1,7 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
-public class Warrior {
+public class Warrior extends Perso {
     private String name;
 //    private String image;
     private int life;
@@ -79,6 +79,14 @@ public class Warrior {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Warrior{" +
+                "name='" + name + '\'' +
+                ", life=" + life +
+                ", strength=" + strength +
+                '}';
+    }
 //    public void setSpell(int spell) {
 //        this.spell = spell;
 //    }
