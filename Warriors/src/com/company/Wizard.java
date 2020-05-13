@@ -3,25 +3,27 @@ import java.util.Scanner;
 
 public class Wizard {
     private String name;
-    private String image;
     private int life;
     private int strength;
-    private int spell;
-    private String weapon;
+//    private int spell;
+//    private String potion;
 
     public Wizard() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter your wizard name :");
-        this.name = sc.nextLine();
-        System.out.println("Your wizard name is : " + name);
+        this.name = "Nina";
+        this.life = 3;
+        this.strength = 8;
     }
 
-    public Wizard(String name){
-
+    public Wizard(String pName){
+        this.name = pName;
+        this.life = 3;
+        this.strength = 8;
     }
 
-    public Wizard(String name, String image, int life, int strength){
-
+    public Wizard(String pName, int pLife, int pStrength){
+        this.name = pName;
+        this.life = pLife;
+        this.strength = pStrength;
     }
 
     public int getLife() {
@@ -32,29 +34,29 @@ public class Wizard {
         return name;
     }
 
-    public String getImage() {
-        return image;
-    }
+//    public String getImage() {
+//        return image;
+//    }
 
     public int getStrength() {
         return strength;
     }
 
-    public int getSpell() {
-        return spell;
-    }
-
-    public String getWeapon() {
-        return weapon;
-    }
+//    public int getSpell() {
+//        return spell;
+//    }
+//
+//    public String getPotion() {
+//        return potion;
+//    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
 
     public void setLife(int life) {
         if ((life>=3) && (life<=6) ) {
@@ -72,11 +74,11 @@ public class Wizard {
         }
     }
 
-    public void setSpell(int spell) {
-        this.spell = spell;
-    }
-
-    public void setWeapon(String weapon) {
-        this.weapon = weapon;
-    }
+//    public void setSpell(int spell) {
+//        this.spell = spell;
+//    }
+//
+//    public void setPotion(String pPotion) {
+//        this.potion = pPotion;
+//    }
 }

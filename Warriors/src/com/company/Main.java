@@ -2,21 +2,15 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
+// Instancie un nouveau Scanner pour récupérer les inputs
         Scanner sc = new Scanner(System.in);
+// Instancie un nouveau menu
         Menu menu = new Menu();
+// Afficher le choix du menu
         menu.display();
-// Choisir
-        System.out.println("Write '0' to quit or '1' to create a new perso");
-        int response = sc.nextInt();
-        if (response == 0) {
-//            String quit = sc.nextLine();
-            System.out.println("Bye bye");
-        } else if (response == 1){
-            String perso = sc.nextLine();
-            Warrior warrior = menu.createWarrior(sc);
-        }
+// Choisir entre les différentes options
+        menu.choose(sc);
     }
 }
 
