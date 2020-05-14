@@ -2,7 +2,7 @@ package com.company.potions;
 
 import com.company.personnages.Perso;
 
-public class Potion {
+public abstract class Potion {
     protected int potionLife;
 
     public Potion(){

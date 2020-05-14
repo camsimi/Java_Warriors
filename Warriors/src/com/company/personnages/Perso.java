@@ -1,7 +1,7 @@
 package com.company.personnages;
 import com.company.potions.Potion;
 
-public class Perso {
+public abstract class Perso {
     protected String name = "Perso Anonymous";
     protected int strength = 0;
     protected int life = 0;
@@ -32,7 +32,7 @@ public class Perso {
         return life;
     }
 
-    public int getPotion() {
+    public Potion getPotion() {
         return potion;
     }
 

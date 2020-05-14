@@ -2,7 +2,7 @@ package com.company.spells;
 
 import com.company.personnages.Perso;
 
-public class Spell {
+public abstract class Spell {
 
     protected int spellStrength;
 

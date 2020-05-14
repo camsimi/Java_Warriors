@@ -2,7 +2,7 @@ package com.company.weapons;
 
 import com.company.personnages.Perso;
 
-public class Weapon {
+public abstract class Weapon {
     protected int weaponStrenght;
 
     public Weapon(){
