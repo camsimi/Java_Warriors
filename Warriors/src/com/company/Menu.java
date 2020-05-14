@@ -1,15 +1,18 @@
 package com.company;
+import com.company.personnages.Perso;
+import com.company.personnages.Warrior;
+import com.company.personnages.Wizard;
+
 import java.util.Scanner;
 
 public class Menu {
-    private int dice;
 
     public void display(){
         System.out.println("Create new perso");
         System.out.println("Quit game");
     }
 
-    public String chooseMenu(Scanner input){
+    public String chooseMenu(Scanner input) {
         String perso = "";
         System.out.println("Write '0' to quit or '1' to create a new perso:");
         int response = input.nextInt();
@@ -17,7 +20,13 @@ public class Menu {
         if (response == 0) {
             System.out.println("Bye bye");
             this.quit();
-        } else if (response == 1){
+        } else if (response == 1) {
+            this.chooseType(input, perso);
+        }
+        return perso;
+    }
+
+    public String chooseType(Scanner input, String perso){
             do {
                 System.out.println("Please choose your perso: type Wizard or Warrior :");
                 perso = input.nextLine();
@@ -31,20 +40,18 @@ public class Menu {
                     System.out.println("You have to choose between Wizard and Warrior. \n Type 'quit' to quit the game. ");
                 }
             }while ((!perso.equals("Wizard")) && (!perso.equals("Warrior")));
-        }
         return perso;
     }
 
     public String chooseName(Scanner input){
         System.out.println("Please enter your perso name: ");
-        String persoName = input.nextLine();
-        return persoName;
+        return input.nextLine();
     }
 
-    public Perso createPerso(Scanner input, String persoType, String persoName){
+    public Perso createPerso(String persoType, String persoName){
         Perso personnage;
         if (persoType.equals("Warrior")) {
-           personnage = new Warrior(persoName);
+            personnage = new Warrior(persoName);
         }
         else {
             personnage = new Wizard(persoName);
@@ -60,11 +67,6 @@ public class Menu {
 //            System.out.println(((Wizard) perso).getName() + ((Wizard) perso).getLife()
 //            + ((Wizard) perso).getStrength());
                 System.out.println(perso);
-//            } else if (perso instanceof Warrior) {
-//            System.out.println(((Warrior) perso).getName() + ((Warrior) perso).getLife()
-//                    + ((Warrior) perso).getStrength());
-//                System.out.println(perso);
-//            }
         }
         else if (response.equals("quit")){
             this.quit();
@@ -79,22 +81,23 @@ public class Menu {
     public void play(Scanner input) {
         int player = 1;
         int plateau = 64;
-
         int tour = 0;
+        int dice = 0;
+
         do {
             tour = tour + 1;
-            this.dice = this.giveDice(1, 6);
-            if (this.dice + player > plateau) {
+            dice = this.giveDice(1, 6);
+            if (dice + player > plateau) {
                 player = plateau;
             } else {
-                player += this.dice;
+                player += dice;
             }
             System.out.println("Le joueur est sur la case " + player + "/64");
             if (player == plateau) {
                 System.out.println("Tu as gagné!");
                 this.chooseMenu(input);
             }
-        } while (player<=plateau);
+        } while (player<plateau);
     }
 
     public void quit(){

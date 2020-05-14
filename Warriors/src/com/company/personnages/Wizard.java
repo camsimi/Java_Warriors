@@ -1,62 +1,24 @@
-package com.company;
-import java.util.Scanner;
+package com.company.personnages;
 
-public class Wizard extends Perso{
-    private String name;
-    private int life;
-    private int strength;
-//    private int spell;
-//    private String potion;
+public class Wizard extends Perso {
+    private int spell;
+    private String potion;
 
     public Wizard() {
-        this.name = "Nina";
+        this.name = "Wizard Anonymous";
         this.life = 3;
         this.strength = 8;
     }
 
-    public Wizard(String pName){
-        this.name = pName;
+    public Wizard(String n){
+        super(n);
         this.life = 3;
         this.strength = 8;
     }
 
-    public Wizard(String pName, int pLife, int pStrength){
-        this.name = pName;
-        this.life = pLife;
-        this.strength = pStrength;
+    public Wizard(String n, int l, int s){
+        super(n, l, s);
     }
-
-    public int getLife() {
-        return life;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-//    public String getImage() {
-//        return image;
-//    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-//    public int getSpell() {
-//        return spell;
-//    }
-//
-//    public String getPotion() {
-//        return potion;
-//    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-//    public void setImage(String image) {
-//        this.image = image;
-//    }
 
     public void setLife(int life) {
         if ((life>=3) && (life<=6) ) {
@@ -74,19 +36,26 @@ public class Wizard extends Perso{
         }
     }
 
+    public int getSpell() {
+        return spell;
+    }
+
+    public String getPotion() {
+        return potion;
+    }
+
+    public void setSpell(int spell) {
+        this.spell = spell;
+    }
+
+    public void setPotion(String potion) {
+        this.potion = potion;
+    }
+
     @Override
     public String toString() {
-        return "Wizard{" +
-                "name='" + name + '\'' +
-                ", life=" + life +
-                ", strength=" + strength +
-                '}';
+        return super.toString() +
+                ", Spell: " + spell + '\n' +
+                ", Potion: " + potion;
     }
-    //    public void setSpell(int spell) {
-//        this.spell = spell;
-//    }
-//
-//    public void setPotion(String pPotion) {
-//        this.potion = pPotion;
-//    }
 }
