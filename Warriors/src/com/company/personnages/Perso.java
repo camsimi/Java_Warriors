@@ -1,9 +1,11 @@
 package com.company.personnages;
+import com.company.potions.Potion;
 
 public class Perso {
     protected String name = "Perso Anonymous";
     protected int strength = 0;
     protected int life = 0;
+    private Potion potion;
 
     protected Perso(){
     }
@@ -30,6 +32,10 @@ public class Perso {
         return life;
     }
 
+    public int getPotion() {
+        return potion;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -42,11 +48,16 @@ public class Perso {
         this.life = life;
     }
 
+    public void setPotion(Potion potion) {
+        this.potion = potion;
+    }
+
     @Override
     public String toString() {
         return "Perso: \n" +
                 "Name='" + name + '\'' +
                 ", Strength=" + strength +
-                ", Life=" + life;
+                ", Life=" + life +
+                ", Potion= " + potion;
     }
 }

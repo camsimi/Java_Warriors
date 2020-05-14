@@ -2,7 +2,6 @@ package com.company;
 import com.company.personnages.Perso;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
-
 import java.util.Scanner;
 
 public class Menu {
@@ -16,7 +15,7 @@ public class Menu {
         String perso = "";
         System.out.println("Write '0' to quit or '1' to create a new perso:");
         int response = input.nextInt();
-        String clavier = input.nextLine();
+        String entree = input.nextLine();
         if (response == 0) {
             System.out.println("Bye bye");
             this.quit();
@@ -29,17 +28,17 @@ public class Menu {
     public String chooseType(Scanner input, String perso){
             do {
                 System.out.println("Please choose your perso: type Wizard or Warrior :");
-                perso = input.nextLine();
-                if (perso.equals("Wizard")) {
+                perso = input.nextLine().toLowerCase();
+                if (perso.equals("wizard")) {
                     System.out.println("You chose to be a : " + perso);
-                } else if (perso.equals("Warrior")) {
+                } else if (perso.equals("warrior")) {
                     System.out.println("You chose to be a : " + perso);
-                } else if (perso.equals("quit") || perso.equals("quitter") || perso.equals("Quit")) {
+                } else if (perso.equals("quit") || perso.equals("quitter")) {
                     this.quit();
                 } else {
                     System.out.println("You have to choose between Wizard and Warrior. \n Type 'quit' to quit the game. ");
                 }
-            }while ((!perso.equals("Wizard")) && (!perso.equals("Warrior")));
+            }while ((!perso.equals("wizard")) && (!perso.equals("warrior")));
         return perso;
     }
 
@@ -63,9 +62,6 @@ public class Menu {
         System.out.println("If you want to see your perso informations, press 'y'");
         String response = input.nextLine().toLowerCase();
         if (response.equals("y")) {
-//            if (perso instanceof Wizard) {
-//            System.out.println(((Wizard) perso).getName() + ((Wizard) perso).getLife()
-//            + ((Wizard) perso).getStrength());
                 System.out.println(perso);
         }
         else if (response.equals("quit")){

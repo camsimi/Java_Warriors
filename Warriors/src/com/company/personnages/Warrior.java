@@ -1,8 +1,8 @@
 package com.company.personnages;
+import com.company.weapons.Weapon;
 
 public class Warrior extends Perso {
-    private int spell;
-    private String weapon;
+    private Weapon weapon;
 
     public Warrior() {
         this.name ="Warrior Anonymous";
@@ -36,26 +36,17 @@ public class Warrior extends Perso {
         }
     }
 
-    public int getSpell() {
-        return spell;
-    }
-
-    public String getWeapon() {
+    public Weapon getWeapon() {
         return weapon;
     }
 
-    public void setSpell(int spell) {
-        this.spell = spell;
-    }
-
-    public void setWeapon(String weapon) {
+    public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                ", Spell: " + spell +
                 ", Weapon: " + weapon;
     }
 }

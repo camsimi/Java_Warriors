@@ -1,8 +1,8 @@
 package com.company.personnages;
+import com.company.spells.Spell;
 
 public class Wizard extends Perso {
-    private int spell;
-    private String potion;
+    private Spell spell;
 
     public Wizard() {
         this.name = "Wizard Anonymous";
@@ -36,26 +36,17 @@ public class Wizard extends Perso {
         }
     }
 
-    public int getSpell() {
+    public Spell getSpell() {
         return spell;
     }
 
-    public String getPotion() {
-        return potion;
-    }
-
-    public void setSpell(int spell) {
+    public void setSpell(Spell spell) {
         this.spell = spell;
-    }
-
-    public void setPotion(String potion) {
-        this.potion = potion;
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                ", Spell: " + spell + '\n' +
-                ", Potion: " + potion;
+                ", Spell: " + spell;
     }
 }
