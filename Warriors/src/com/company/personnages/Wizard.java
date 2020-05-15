@@ -5,20 +5,16 @@ public class Wizard extends Perso {
     private Spell spell;
 
     public Wizard() {
-        this.name = "Wizard Anonymous";
-        this.life = 3;
-        this.strength = 8;
+        super("Anonymous wizard", 3, 8);
     }
 
     public Wizard(String n){
-        super(n);
-        this.life = 3;
-        this.strength = 8;
+        super(n, 3, 8);
     }
 
-    public Wizard(String n, int l, int s){
-        super(n, l, s);
-    }
+//    public Wizard(String n, int l, int s){
+//        super(n, l, s);
+//    }
 
     public void setLife(int life) {
         if ((life>=3) && (life<=6) ) {
@@ -47,6 +43,6 @@ public class Wizard extends Perso {
     @Override
     public String toString() {
         return super.toString() +
-                ", Spell: " + spell;
+                ", mon sort est un " + spell;
     }
 }

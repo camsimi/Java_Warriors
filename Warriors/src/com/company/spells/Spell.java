@@ -3,11 +3,13 @@ package com.company.spells;
 import com.company.personnages.Perso;
 
 public abstract class Spell {
-
     protected int spellStrength;
 
     public Spell(){
+    }
 
+    public Spell(int sStrength){
+        this.spellStrength = sStrength;
     }
 
     public int getSpellStrength() {

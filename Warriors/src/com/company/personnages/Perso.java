@@ -5,7 +5,7 @@ public abstract class Perso {
     protected String name = "Perso Anonymous";
     protected int strength = 0;
     protected int life = 0;
-    private Potion potion;
+    protected Potion potion;
 
     protected Perso(){
     }
@@ -37,7 +37,9 @@ public abstract class Perso {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name!= null){
+            this.name = name;
+        }
     }
 
     public void setStrength(int strength) {
@@ -55,9 +57,9 @@ public abstract class Perso {
     @Override
     public String toString() {
         return "Perso: \n" +
-                "Name='" + name + '\'' +
-                ", Strength=" + strength +
-                ", Life=" + life +
-                ", Potion= " + potion;
+                "Je m'appelle " + name + '\'' +
+                ", j'ai " + strength + " points de force, " +
+                life + " points de vie" +
+                ", ma potion est :" + potion;
     }
 }

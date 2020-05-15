@@ -5,20 +5,16 @@ public class Warrior extends Perso {
     private Weapon weapon;
 
     public Warrior() {
-        this.name ="Warrior Anonymous";
-        this.life = 5;
-        this.strength = 5;
+        super("Anonymous wizard", 5, 5);
     }
 
     public Warrior(String n){
-        super(n);
-        this.life = 5;
-        this.strength = 5;
+        super(n, 5, 5);
     }
 
-    public Warrior(String n, int l,  int s){
-        super(n, l, s);
-    }
+//    public Warrior(String n, int l,  int s){
+//        super(n, l, s);
+//    }
 
     public void setLife(int life) {
         if (life<=10) {
@@ -47,6 +43,6 @@ public class Warrior extends Perso {
     @Override
     public String toString() {
         return super.toString() +
-                ", Weapon: " + weapon;
+                ", mon arme est une " + weapon;
     }
 }

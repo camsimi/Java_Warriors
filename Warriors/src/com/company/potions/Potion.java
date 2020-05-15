@@ -6,7 +6,10 @@ public abstract class Potion {
     protected int potionLife;
 
     public Potion(){
+    }
 
+    public Potion(int pLife){
+        this.potionLife = pLife;
     }
 
     public int getPotionLife() {
