@@ -1,4 +1,5 @@
 package com.company.personnages;
+
 import com.company.weapons.Weapon;
 
 public class Warrior extends Perso {
@@ -8,7 +9,7 @@ public class Warrior extends Perso {
         super("Anonymous wizard", 5, 5);
     }
 
-    public Warrior(String n){
+    public Warrior(String n) {
         super(n, 5, 5);
     }
 
@@ -17,7 +18,7 @@ public class Warrior extends Perso {
 //    }
 
     public void setLife(int life) {
-        if (life<=10) {
+        if (life <= 10) {
             this.life = life;
         } else {
             System.out.println("You must enter a life inferior to 10.");
@@ -25,7 +26,7 @@ public class Warrior extends Perso {
     }
 
     public void setStrength(int strength) {
-        if ( (strength>=5) && (strength<=10) ) {
+        if ((strength >= 5) && (strength <= 10)) {
             this.strength = strength;
         } else {
             System.out.println("You must enter a strength between 5 and 10.");
