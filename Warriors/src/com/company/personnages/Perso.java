@@ -2,19 +2,19 @@ package com.company.personnages;
 import com.company.potions.Potion;
 
 public abstract class Perso {
-    protected String name = "Perso Anonymous";
-    protected int strength = 0;
-    protected int life = 0;
-    protected Potion potion;
+    private String name = "Perso Anonymous";
+    private int strength = 0;
+    private int life = 0;
+    private Potion potion;
 
-    protected Perso(){
+    public Perso(){
     }
 
-    protected Perso(String pName){
+    public Perso(String pName){
         this.name = pName;
     }
 
-    protected Perso(String pName, int pLife, int pStrength){
+    public Perso(String pName, int pLife, int pStrength){
         this.name = pName;
         this.life = pLife;
         this.strength = pStrength;

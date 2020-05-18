@@ -12,13 +12,9 @@ public class Wizard extends Perso {
         super(n, 3, 8);
     }
 
-//    public Wizard(String n, int l, int s){
-//        super(n, l, s);
-//    }
-
     public void setLife(int life) {
         if ((life>=3) && (life<=6) ) {
-            this.life = life;
+            setLife(life);
         } else {
             System.out.println("You must enter a life inferior to 10.");
         }
@@ -26,7 +22,7 @@ public class Wizard extends Perso {
 
     public void setStrength(int strength) {
         if ( (strength>=8) && (strength<=15) ) {
-            this.strength = strength;
+            setStrength(strength);
         } else {
             System.out.println("You must enter a strength between 5 and 10.");
         }

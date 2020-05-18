@@ -1,5 +1,6 @@
 package com.company;
 import com.company.personnages.Perso;
+import com.company.personnages.PersonnageHorsPlateauException;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
 import java.util.Scanner;
@@ -88,7 +89,9 @@ public class Menu {
         do {
             tour = tour + 1;
             dice = this.giveDice(1, 6);
+
             if (dice + player > plateau) {
+//                throw new PersonnageHorsPlateauException();
                 player = plateau;
             } else {
                 player += dice;
