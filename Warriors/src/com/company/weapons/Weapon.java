@@ -11,8 +11,8 @@ public abstract class Weapon extends Case {
     public Weapon(){
     }
 
-    public Weapon (int wStrength, String wName){
-        this.name = wName;
+    public Weapon (String wName, int wStrength, int num){
+        super(wName, num);
         this.weaponStrength = wStrength;
     }
 

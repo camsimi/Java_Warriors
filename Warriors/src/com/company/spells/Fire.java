@@ -2,7 +2,7 @@ package com.company.spells;
 
 public class Fire extends Spell{
 
-    public Fire(){
-        super(7);
+    public Fire(int num){
+        super("Fire", 7, num);
     }
 }

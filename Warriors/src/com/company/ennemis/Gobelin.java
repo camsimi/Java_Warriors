@@ -2,7 +2,7 @@ package com.company.ennemis;
 
 public class Gobelin extends Ennemi{
 
-    public Gobelin(){
-        super("Gobelin", 6, 1);
+    public Gobelin(int num){
+        super("Gobelin", 6, 1, num);
     }
 }

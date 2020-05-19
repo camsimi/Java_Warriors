@@ -2,7 +2,7 @@ package com.company.ennemis;
 
 public class Sorcier extends Ennemi{
 
-    public Sorcier(){
-        super("Sorcier", 9, 2);
+    public Sorcier(int num){
+        super("Sorcier", 9, 2, num);
     }
 }
