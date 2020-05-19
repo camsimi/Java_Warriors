@@ -1,7 +1,10 @@
 package com.company.weapons;
+import com.company.Case;
 import com.company.personnages.Perso;
+import com.company.personnages.Warrior;
+import com.company.personnages.Wizard;
 
-public abstract class Weapon {
+public abstract class Weapon extends Case {
     protected String name;
     protected int weaponStrenght;
 
@@ -11,6 +14,17 @@ public abstract class Weapon {
     public Weapon (int wStrength, String wName){
         this.name = wName;
         this.weaponStrenght = wStrength;
+    }
+
+    @Override
+    public void interact(Perso perso) {
+        if (perso instanceof Wizard){
+            System.out.println("");
+        } else if (perso instanceof Warrior){
+            System.out.println("");
+        } else {
+            System.out.println("");
+        }
     }
 
     public String getName() {

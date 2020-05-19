@@ -1,8 +1,11 @@
 package com.company.potions;
 
+import com.company.Case;
 import com.company.personnages.Perso;
+import com.company.personnages.Warrior;
+import com.company.personnages.Wizard;
 
-public abstract class Potion {
+public abstract class Potion extends Case {
     protected int potionLife;
 
     public Potion(){
@@ -10,6 +13,17 @@ public abstract class Potion {
 
     public Potion(int pLife){
         this.potionLife = pLife;
+    }
+
+    @Override
+    public void interact(Perso perso) {
+        if (perso instanceof Wizard){
+            System.out.println("");
+        } else if (perso instanceof Warrior){
+            System.out.println("");
+        } else {
+            System.out.println("");
+        }
     }
 
     public int getPotionLife() {

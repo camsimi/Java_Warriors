@@ -1,4 +1,4 @@
 package com.company;
 
-public class Plateau {
+public class Plateau extends Case {
 }
