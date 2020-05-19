@@ -6,14 +6,14 @@ import com.company.personnages.Wizard;
 
 public abstract class Weapon extends Case {
     protected String name;
-    protected int weaponStrenght;
+    protected int weaponStrength;
 
     public Weapon(){
     }
 
     public Weapon (int wStrength, String wName){
         this.name = wName;
-        this.weaponStrenght = wStrength;
+        this.weaponStrength = wStrength;
     }
 
     @Override
@@ -36,14 +36,14 @@ public abstract class Weapon extends Case {
     }
 
     public int getWeaponStrenght() {
-        return weaponStrenght;
+        return weaponStrength;
     }
 
     public void setWeaponStrenght(int weaponStrenght) {
-        this.weaponStrenght = weaponStrenght;
+        this.weaponStrength = weaponStrenght;
     }
 
     public void addWeaponStrenght(Perso perso){
-        perso.setStrength(perso.getStrength() + this.weaponStrenght);
+        perso.setStrength(perso.getStrength() + this.weaponStrength);
     }
 }
