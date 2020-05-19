@@ -5,23 +5,14 @@ import com.company.personnages.Perso;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
 
-public class Ennemi extends Case {
-    private String name;
+public abstract class Ennemi extends Case {
     private int life;
     private int strength;
 
-    public Ennemi(String name, int life, int strength){
-        this.name = name;
+    public Ennemi(String name, int life, int strength, int num){
+        super(name, num);
         this.life = life;
         this.strength = strength;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getLife() {

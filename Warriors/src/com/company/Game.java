@@ -13,7 +13,6 @@ public class Game {
     int plateauLength = 64;
     int tour = 0;
     int dice = 0;
-    ArrayList<Case> plateau = new ArrayList<Case>();
 
 // Instancie un nouveau Scanner pour récupérer les inputs
     Scanner sc = new Scanner(System.in);
