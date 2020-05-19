@@ -1,19 +1,21 @@
 package com.company;
 
 import com.company.personnages.Perso;
+import com.company.personnages.PersonnageHorsPlateauException;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
     int posPlayer = 0;
-    int plateau = 64;
+    int plateauLength = 64;
     int tour = 0;
     int dice = 0;
-    //    Plateau ArrayList<Case> plateau;
-//    Plateau plateau;
-    // Instancie un nouveau Scanner pour récupérer les inputs
+    ArrayList<Case> plateau = new ArrayList<Case>();
+
+// Instancie un nouveau Scanner pour récupérer les inputs
     Scanner sc = new Scanner(System.in);
 
     public String chooseType(Menu menu) {
@@ -73,21 +75,27 @@ public class Game {
         this.displayPerso(perso, menu);
     }
 
+    public int giveDice(int min, int max) {
+        return (int) Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    public static void controle(int result) throws PersonnageHorsPlateauException{
+        if (result > 64)
+            throw new PersonnageHorsPlateauException();
+    }
+
     public void jouer_un_tour() {
         // incrémente le nombre de tour
         tour = tour + 1;
         // lance le dé au hasard
         dice = this.giveDice(1, 6);
-        // si la somme du résultat du dé avec la position du joueur est supérieure aux nombres de cases du plateau
-        if (dice + posPlayer > plateau) {
-//                throw new PersonnageHorsPlateauException();
-            // le joueur avance sur la case 64
-            posPlayer = plateau;
-            // sinon on fait la somme du dé avec la position du joueur
-        } else {
-            posPlayer += dice;
+        try {
+            controle(posPlayer += dice);
+        } catch (PersonnageHorsPlateauException e) {
+            posPlayer = plateauLength;
         }
         System.out.println("Le joueur est sur la case " + posPlayer + "/64");
+
         // interagir avec le plateau
         // s'équiper d'un bonus
         // lancer un combat
@@ -95,16 +103,12 @@ public class Game {
         // gérer plusieurs joueurs
     }
 
-    public int giveDice(int min, int max) {
-        return (int) Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
     public void play(Menu menu) {
         do {
             jouer_un_tour();
             // tant que la position du joueur est inférieure à la dernière case du plateau, boucler sur le code précédent
-        } while (posPlayer < plateau);
-        if (posPlayer == plateau) {
+        } while (posPlayer < plateauLength);
+        if (posPlayer == plateauLength) {
             System.out.println("Tu as gagné!");
             // affichage du choix entre quitter et créer un nouveau perso
             menu.chooseMenu(this);
