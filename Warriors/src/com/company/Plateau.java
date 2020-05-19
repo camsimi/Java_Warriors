@@ -84,5 +84,25 @@ public class Plateau extends Case {
 // Ajout cases BigPotion
         plateau.add(new BigPotion(28));
         plateau.add(new BigPotion(41));
+
+//-------------CASES VIDES---------------------------
+        plateau.add(new CaseVide(0));
+        plateau.add(new CaseVide(5));
+        plateau.add(new CaseVide(14));
+        plateau.add(new CaseVide(16));
+        plateau.add(new CaseVide(29));
+        plateau.add(new CaseVide(34));
+        plateau.add(new CaseVide(46));
+        plateau.add(new CaseVide(50));
+        plateau.add(new CaseVide(51));
+        plateau.add(new CaseVide(54));
+        plateau.add(new CaseVide(55));
+        plateau.add(new CaseVide(57));
+        plateau.add(new CaseVide(58));
+        plateau.add(new CaseVide(59));
+        plateau.add(new CaseVide(60));
+        plateau.add(new CaseVide(61));
+        plateau.add(new CaseVide(63));
+        plateau.add(new CaseVide(64));
     }
 }
