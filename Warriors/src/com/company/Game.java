@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
+    // attribut qui stocke la position du joueur
     int posPlayer = 0;
-    int plateauLength = 64;
     int tour = 0;
     int dice = 0;
+    Plateau plateau = new Plateau();
+    // attribut qui stocke la longueur du plateau
+    int plateauLength = plateau.getPlateauLength();
 
 // Instancie un nouveau Scanner pour récupérer les inputs
     Scanner sc = new Scanner(System.in);
