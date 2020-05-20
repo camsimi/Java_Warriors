@@ -101,7 +101,7 @@ public class Game {
         if (posPlayer != plateauLength) {
 // récupération de la case courante avec la position du joueur
             Case CaseCourante = plateau.getPlateau().get(posPlayer);
-            System.out.println("Tu es sur une " + CaseCourante.toString() + ", case: " + posPlayer + "/64");
+            System.out.println(CaseCourante.toString());
 // Interaction de la case avec le personnage
             CaseCourante.interact(perso);
         }

@@ -32,6 +32,13 @@ public abstract class Ennemi extends Case {
     }
 
     @Override
+    public String toString(){
+        return super.toString()
+                + ", il a " + getLife() + " points de vie et "
+                + getStrength() + " en force d'attaque.";
+    }
+
+    @Override
     public void interact(Perso perso) {
         if (perso instanceof Wizard) {
             System.out.println("J'intéragis avec un Magicien");

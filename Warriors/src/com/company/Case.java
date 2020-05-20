@@ -37,7 +37,8 @@ public abstract class Case {
 
     @Override
     public String toString(){
-        return "case " + getName();
+        return "Case " +
+               getNum() + "/64: " + getName();
     }
 
     public void interact(Perso perso){
