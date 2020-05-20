@@ -23,9 +23,10 @@ public class Warrior extends Perso {
 
     public void setStrength(int strength) {
         if ((strength >= 5) && (strength <= 10)) {
-            setStrength(strength);
-        } else {
-            System.out.println("You must enter a strength between 5 and 10.");
+            super.setStrength(strength);
+        } else if (strength > 10) {
+            super.setStrength(10);
+            System.out.println("You can't have a strength superior to 10.");
         }
     }
 

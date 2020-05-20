@@ -56,7 +56,7 @@ public abstract class Perso {
 
     @Override
     public String toString() {
-        return "Perso: \n" +
+        return "Perso: " +
                 "Je m'appelle " + name +
                 ", j'ai " + strength + " points de force, " +
                 life + " points de vie" +

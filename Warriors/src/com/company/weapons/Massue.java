@@ -17,7 +17,8 @@ public class Massue extends Weapon {
         super.interact(perso);
         if (perso instanceof Warrior){
             ((Warrior) perso).setWeapon(this);
-            System.out.println("Youpi, je suis maintenant armé d'une massue!");
+            super.addWeaponStrength(perso);
+            System.out.println("Youpi, je suis maintenant armée d'une massue!");
         }
     }
 }

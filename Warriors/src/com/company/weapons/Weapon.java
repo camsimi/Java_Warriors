@@ -31,7 +31,7 @@ public abstract class Weapon extends Case {
         this.weaponStrength = weaponStrenght;
     }
 
-    public void addWeaponStrenght(Perso perso){
+    public void addWeaponStrength(Perso perso){
         perso.setStrength(perso.getStrength() + this.weaponStrength);
     }
 }

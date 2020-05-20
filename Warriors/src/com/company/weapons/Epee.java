@@ -9,12 +9,13 @@ public class Epee extends Weapon {
         super("Epée", 5, num);
     }
 
-
+    @Override
     public void interact(Perso perso) {
         super.interact(perso);
         if (perso instanceof Warrior){
             ((Warrior) perso).setWeapon(this);
-            System.out.println("Youpi, je suis maintenant armé d'une épée!");
+            super.addWeaponStrength(perso);
+            System.out.println("Youpi, je suis maintenant armée d'une épée!");
         }
     }
 }
