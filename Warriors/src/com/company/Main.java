@@ -13,9 +13,9 @@ public class Main {
 // Choisir entre les différentes options et stocker le retour Wizard/Warrior dans une variable
         String persoType = menu.chooseMenu(game);
 // Create perso with type, name and display his informations
-        game.createPerso(menu, persoType);
+        Perso perso = game.createPerso(menu, persoType);
 // Lancer la partie
-        game.play(menu);
+        game.play(menu, perso);
     }
 }
 

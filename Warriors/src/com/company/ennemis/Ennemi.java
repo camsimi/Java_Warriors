@@ -9,7 +9,7 @@ public abstract class Ennemi extends Case {
     private int life;
     private int strength;
 
-    public Ennemi(String name, int life, int strength, int num){
+    public Ennemi(String name, int life, int strength, int num) {
         super(name, num);
         this.life = life;
         this.strength = strength;
@@ -33,12 +33,12 @@ public abstract class Ennemi extends Case {
 
     @Override
     public void interact(Perso perso) {
-        if (perso instanceof Wizard){
-            System.out.println("");
-        } else if (perso instanceof Warrior){
-            System.out.println("");
+        if (perso instanceof Wizard) {
+            System.out.println("J'intéragis avec un Magicien");
+        } else if (perso instanceof Warrior) {
+            System.out.println("J'intéragis avec un Guerrier");
         } else {
-            System.out.println("");
+            System.out.println("J'intéragis avec un personnage original");
         }
     }
 }

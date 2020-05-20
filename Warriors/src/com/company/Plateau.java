@@ -13,11 +13,11 @@ import com.company.weapons.Massue;
 import java.util.ArrayList;
 
 public class Plateau extends Case {
-    ArrayList<Case> plateau = new ArrayList<Case>();
-    private int plateauLength = plateau.size();
+    ArrayList<Case> plateau = new ArrayList<Case>(64);
+    private int plateauLength;
 
     public Plateau() {
-        for (int i = 0; i < 64; i++) {
+        for (int i = 1; i < 65; i++) {
             switch (i) {
                 case 45, 52, 56, 62 -> plateau.add(new Dragon(i));
                 case 10, 20, 25, 32, 35, 36, 37, 40, 44, 47 -> plateau.add(new Sorcier(i));
@@ -31,6 +31,7 @@ public class Plateau extends Case {
                 default -> plateau.add(new CaseVide(i));
             }
         }
+        this.plateauLength = plateau.size();
     }
 
     public ArrayList<Case> getPlateau() {

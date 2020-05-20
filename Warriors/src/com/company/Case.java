@@ -35,7 +35,12 @@ public abstract class Case {
         this.num = num;
     }
 
+    @Override
+    public String toString(){
+        return "case " + getName();
+    }
+
     public void interact(Perso perso){
-        System.out.println("Interaction avec :" + perso.getName());
+        System.out.println("Interaction avec " + perso.getName());
     }
 }

@@ -17,7 +17,7 @@ public class Game {
     // attribut qui stocke la longueur du plateau
     int plateauLength = plateau.getPlateauLength();
 
-// Instancie un nouveau Scanner pour récupérer les inputs
+    // Instancie un nouveau Scanner pour récupérer les inputs
     Scanner sc = new Scanner(System.in);
 
     public String chooseType(Menu menu) {
@@ -67,7 +67,7 @@ public class Game {
     }
 
     // on crée un perso en instanciant son type et avec le nom saisi en input
-    public void createPerso(Menu menu, String persoType) {
+    public Perso createPerso(Menu menu, String persoType) {
         // Choisir un nom au perso et le stocker dans une variable
         String persoName = this.chooseName();
 /*Créer un nouveau perso (instancier un Warrior/Wizard à partir de la classe Perso)
@@ -75,18 +75,19 @@ public class Game {
         Perso perso = this.instanciatePerso(persoType, persoName);
 // Afficher les infos du perso en récupérant l'objet perso et le Scanner en paramètres.
         this.displayPerso(perso, menu);
+        return perso;
     }
 
     public int giveDice(int min, int max) {
         return (int) Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    public static void controle(int result) throws PersonnageHorsPlateauException{
+    public static void controle(int result) throws PersonnageHorsPlateauException {
         if (result > 64)
             throw new PersonnageHorsPlateauException();
     }
 
-    public void jouer_un_tour() {
+    public void jouer_un_tour(Perso perso) {
         // incrémente le nombre de tour
         tour = tour + 1;
         // lance le dé au hasard
@@ -96,23 +97,29 @@ public class Game {
         } catch (PersonnageHorsPlateauException e) {
             posPlayer = plateauLength;
         }
-        System.out.println("Le joueur est sur la case " + posPlayer + "/64");
+// Si le joueur n'a pas atteint la case 64
+        if (posPlayer != plateauLength) {
+// récupération de la case courante avec la position du joueur
+            Case CaseCourante = plateau.getPlateau().get(posPlayer);
+            System.out.println("Tu es sur une " + CaseCourante.toString() + ", case: " + posPlayer + "/64");
+// Interaction de la case avec le personnage
+            CaseCourante.interact(perso);
+        }
 
-        // interagir avec le plateau
         // s'équiper d'un bonus
         // lancer un combat
         // mettre à jour le statut d'avancement du jeu (en cours/quitter la partie/perso mort,...)
         // gérer plusieurs joueurs
     }
 
-    public void play(Menu menu) {
+    public void play(Menu menu, Perso perso) {
         do {
-            jouer_un_tour();
-            // tant que la position du joueur est inférieure à la dernière case du plateau, boucler sur le code précédent
+            jouer_un_tour(perso);
+// tant que la position du joueur est inférieure à la dernière case du plateau, boucler sur le code précédent
         } while (posPlayer < plateauLength);
         if (posPlayer == plateauLength) {
             System.out.println("Tu as gagné!");
-            // affichage du choix entre quitter et créer un nouveau perso
+// affichage du choix entre quitter et créer un nouveau perso
             menu.chooseMenu(this);
         }
     }
