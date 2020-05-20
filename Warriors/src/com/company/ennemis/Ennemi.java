@@ -41,11 +41,11 @@ public abstract class Ennemi extends Case {
     @Override
     public void interact(Perso perso) {
         if (perso instanceof Wizard) {
-            System.out.println("J'intéragis avec un Magicien");
+            System.out.println("J'interagis avec un Magicien");
         } else if (perso instanceof Warrior) {
-            System.out.println("J'intéragis avec un Guerrier");
+            System.out.println("J'interagis avec un Guerrier");
         } else {
-            System.out.println("J'intéragis avec un personnage original");
+            System.out.println("J'interagis avec un personnage original");
         }
     }
 }

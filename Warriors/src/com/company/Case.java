@@ -3,8 +3,8 @@ package com.company;
 import com.company.personnages.Perso;
 
 public abstract class Case {
-    String name;
-    int num;
+    protected String name = "";
+    protected int num;
 
     public Case(){
 
@@ -37,8 +37,9 @@ public abstract class Case {
 
     @Override
     public String toString(){
-        return "Case " +
-               getNum() + "/64: " + getName();
+//        return "Case " +
+//               getNum() + "/64: " + getName();
+       return this.name;
     }
 
     public void interact(Perso perso){

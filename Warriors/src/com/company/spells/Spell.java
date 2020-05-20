@@ -19,11 +19,11 @@ public abstract class Spell extends Case {
     @Override
     public void interact(Perso perso) {
         if (perso instanceof Wizard){
-            System.out.println("");
+            System.out.println("J'interagis avec Magicien");
         } else if (perso instanceof Warrior){
-            System.out.println("");
+            System.out.println("j'interagis avec Warrior");
         } else {
-            System.out.println("");
+            System.out.println("j'interagis avec Personne");
         }
     }
 

@@ -5,10 +5,10 @@ import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
 
 public abstract class Weapon extends Case {
-    protected String name;
     protected int weaponStrength;
 
     public Weapon(){
+
     }
 
     public Weapon (String wName, int wStrength, int num){
@@ -19,20 +19,8 @@ public abstract class Weapon extends Case {
     @Override
     public void interact(Perso perso) {
         if (perso instanceof Wizard){
-            System.out.println("");
-        } else if (perso instanceof Warrior){
-            System.out.println("");
-        } else {
-            System.out.println("");
+            System.out.println("Oh une arme, c'est nul je ne peux pas la prendre, je suis un magicien!");
         }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getWeaponStrenght() {

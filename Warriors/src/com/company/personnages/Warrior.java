@@ -33,6 +33,10 @@ public class Warrior extends Perso {
         return weapon;
     }
 
+    public String getWeaponName() {
+        return weapon.getName();
+    }
+
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
@@ -40,6 +44,6 @@ public class Warrior extends Perso {
     @Override
     public String toString() {
         return super.toString() +
-                ", mon arme est une " + weapon;
+                ", mon arme est une: " + weapon;
     }
 }

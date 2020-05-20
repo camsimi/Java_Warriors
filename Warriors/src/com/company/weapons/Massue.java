@@ -1,9 +1,23 @@
 package com.company.weapons;
 
-public class Massue extends Weapon {
-    private String name;
+import com.company.personnages.Perso;
+import com.company.personnages.Warrior;
+import com.company.personnages.Wizard;
 
+public class Massue extends Weapon {
+
+    public Massue(){
+    }
     public Massue(int num) {
         super("Massue", 3, num);
+    }
+
+    @Override
+    public void interact(Perso perso) {
+        super.interact(perso);
+        if (perso instanceof Warrior){
+            ((Warrior) perso).setWeapon(this);
+            System.out.println("Youpi, je suis maintenant armé d'une massue!");
+        }
     }
 }

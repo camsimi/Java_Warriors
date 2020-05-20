@@ -47,7 +47,7 @@ public class Game {
     // on instancie un nouveau perso à partir de la classe Warrior ou Wizard en fonction du user input
     public Perso instanciatePerso(String persoType, String persoName) {
         Perso personnage;
-        if (persoType.equals("Warrior")) {
+        if (persoType.equals("warrior")) {
             personnage = new Warrior(persoName);
         } else {
             personnage = new Wizard(persoName);
@@ -101,9 +101,11 @@ public class Game {
         if (posPlayer != plateauLength) {
 // récupération de la case courante avec la position du joueur
             Case CaseCourante = plateau.getPlateau().get(posPlayer);
-            System.out.println(CaseCourante.toString());
+            System.out.println("Case " + posPlayer + "/64 " + CaseCourante.toString());
 // Interaction de la case avec le personnage
             CaseCourante.interact(perso);
+// Affichage infos/attributs perso
+            System.out.println(perso.toString());
         }
 
         // s'équiper d'un bonus
