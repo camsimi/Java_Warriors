@@ -18,12 +18,8 @@ public abstract class Spell extends Case {
 
     @Override
     public void interact(Perso perso) {
-        if (perso instanceof Wizard){
-            System.out.println("J'interagis avec Magicien");
-        } else if (perso instanceof Warrior){
-            System.out.println("j'interagis avec Warrior");
-        } else {
-            System.out.println("j'interagis avec Personne");
+        if (perso instanceof Warrior){
+            System.out.println("Oh un sort, c'est nul je ne peux pas le prendre, je suis une guerrière!");
         }
     }
 
@@ -32,10 +28,12 @@ public abstract class Spell extends Case {
     }
 
     public void setSpellStrength(int spellStrength) {
+
         this.spellStrength = spellStrength;
     }
 
     public void addSpellStrength(Perso perso){
+
         perso.setStrength(perso.getStrength() + this.spellStrength);
     }
 }

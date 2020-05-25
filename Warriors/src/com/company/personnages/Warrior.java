@@ -26,16 +26,12 @@ public class Warrior extends Perso {
             super.setStrength(strength);
         } else if (strength > 10) {
             super.setStrength(10);
-            System.out.println("You can't have a strength superior to 10.");
+            System.out.println("Your maximum strength is 10.");
         }
     }
 
     public Weapon getWeapon() {
         return weapon;
-    }
-
-    public String getWeaponName() {
-        return weapon.getName();
     }
 
     public void setWeapon(Weapon weapon) {

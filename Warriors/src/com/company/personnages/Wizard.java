@@ -21,10 +21,11 @@ public class Wizard extends Perso {
     }
 
     public void setStrength(int strength) {
-        if ( (strength>=8) && (strength<=15) ) {
-            setStrength(strength);
-        } else {
-            System.out.println("You must enter a strength between 5 and 10.");
+        if ( (strength >=8) && (strength <=15) ) {
+            super.setStrength(strength);
+        } else if (strength > 15){
+            super.setStrength(15);
+            System.out.println("Your maximum strength is 15");
         }
     }
 
