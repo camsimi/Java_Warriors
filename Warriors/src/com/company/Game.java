@@ -39,13 +39,13 @@ public class Game {
     }
 
     // on récupère le user input pour le nom du personnage
-    public String chooseName() {
+    private String chooseName() {
         System.out.println("Please enter your perso name: ");
         return sc.nextLine();
     }
 
     // on instancie un nouveau perso à partir de la classe Warrior ou Wizard en fonction du user input
-    public Perso instanciatePerso(String persoType, String persoName) {
+    private Perso instanciatePerso(String persoType, String persoName) {
         Perso personnage;
         if (persoType.equals("warrior")) {
             personnage = new Warrior(persoName);
@@ -78,16 +78,16 @@ public class Game {
         return perso;
     }
 
-    public int giveDice(int min, int max) {
+    private int giveDice(int min, int max) {
         return (int) Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    public static void controle(int result) throws PersonnageHorsPlateauException {
+    private void controle(int result) throws PersonnageHorsPlateauException {
         if (result > 64)
             throw new PersonnageHorsPlateauException();
     }
 
-    public void jouer_un_tour(Perso perso) {
+    private void jouer_un_tour(Perso perso) {
         // incrémente le nombre de tour
         tour = tour + 1;
         // lance le dé au hasard
@@ -96,16 +96,18 @@ public class Game {
             controle(posPlayer += dice);
         } catch (PersonnageHorsPlateauException e) {
             posPlayer = plateauLength;
+            System.out.println(e.getMessage());
         }
 // Si le joueur n'a pas atteint la case 64
         if (posPlayer != plateauLength) {
 // récupération de la case courante avec la position du joueur
-            Case CaseCourante = plateau.getPlateau().get(posPlayer);
+            Case CaseCourante = plateau.getCase(posPlayer);
             System.out.println("Case " + posPlayer + "/64 " + CaseCourante.toString());
 // Interaction de la case avec le personnage
             CaseCourante.interact(perso);
 // Affichage infos/attributs perso
             System.out.println(perso.toString());
+            System.out.println("-----------------------------------------");
         }
 
         // s'équiper d'un bonus
@@ -115,12 +117,17 @@ public class Game {
     }
 
     public void play(Menu menu, Perso perso) {
+        // plateau aléatoire
+        plateau.mix();
+        System.out.println("------------------------------------");
         do {
             jouer_un_tour(perso);
+
 // tant que la position du joueur est inférieure à la dernière case du plateau, boucler sur le code précédent
         } while (posPlayer < plateauLength);
         if (posPlayer == plateauLength) {
-            System.out.println("Tu as gagné!");
+
+            System.out.println("Case 64/64: Tu as gagné!");
 // affichage du choix entre quitter et créer un nouveau perso
             menu.chooseMenu(this);
         }

@@ -37,8 +37,6 @@ public abstract class Case {
 
     @Override
     public String toString(){
-//        return "Case " +
-//               getNum() + "/64: " + getName();
        return this.name;
     }
 

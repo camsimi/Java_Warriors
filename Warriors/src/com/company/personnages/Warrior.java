@@ -5,11 +5,14 @@ import com.company.weapons.Weapon;
 public class Warrior extends Perso {
     private Weapon weapon;
 
+
     public Warrior() {
-        super("Anonymous wizard", 5, 5, 5, 10, 5, 10);
+//        super("Anonymous wizard", 5, 5, 5, 10, 5, 10);
+        this("Anonymous warrior");
     }
 
     public Warrior(String n) {
+
         super(n, 5, 5, 5, 10, 5, 10);
     }
 

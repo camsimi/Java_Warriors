@@ -6,7 +6,8 @@ public class Wizard extends Perso {
 
     public Wizard() {
 
-        super("Anonymous wizard", 3, 8, 8, 15, 3, 6);
+//        super("Anonymous wizard", 3, 8, 8, 15, 3, 6);
+        this("Anonymous wizard");
     }
 
     public Wizard(String n){

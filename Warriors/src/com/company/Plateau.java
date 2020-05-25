@@ -11,13 +11,16 @@ import com.company.weapons.Epee;
 import com.company.weapons.Massue;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 public class Plateau extends Case {
-    ArrayList<Case> plateau = new ArrayList<Case>(64);
-    private int plateauLength;
+    ArrayList<Case> plateau;
+    private int plateauLength = 64;
 
     public Plateau() {
-        for (int i = 1; i < 65; i++) {
+        this.plateau = new ArrayList<Case>(this.plateauLength);
+        for (int i = 0; i < this.plateauLength; i++) {
             switch (i) {
                 case 45, 52, 56, 62 -> plateau.add(new Dragon(i));
                 case 10, 20, 25, 32, 35, 36, 37, 40, 44, 47 -> plateau.add(new Sorcier(i));
@@ -31,22 +34,18 @@ public class Plateau extends Case {
                 default -> plateau.add(new CaseVide(i));
             }
         }
-        this.plateauLength = plateau.size();
     }
 
-    public ArrayList<Case> getPlateau() {
-        return plateau;
-    }
-
-    public void setPlateau(ArrayList<Case> plateau) {
-        this.plateau = plateau;
+    public void mix(){
+        Collections.shuffle(plateau);
+        System.out.println(plateau);
     }
 
     public int getPlateauLength() {
         return plateauLength;
     }
 
-    public void setPlateauLength(int plateauLength) {
-        this.plateauLength = plateauLength;
+    public Case getCase(int numCase) {
+        return plateau.get(numCase);
     }
 }
