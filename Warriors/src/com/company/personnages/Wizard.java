@@ -5,28 +5,12 @@ public class Wizard extends Perso {
     private Spell spell;
 
     public Wizard() {
-        super("Anonymous wizard", 3, 8);
+
+        super("Anonymous wizard", 3, 8, 8, 15, 3, 6);
     }
 
     public Wizard(String n){
-        super(n, 3, 8);
-    }
-
-    public void setLife(int life) {
-        if ((life>=3) && (life<=6) ) {
-            setLife(life);
-        } else {
-            System.out.println("You must enter a life inferior to 10.");
-        }
-    }
-
-    public void setStrength(int strength) {
-        if ( (strength >=8) && (strength <=15) ) {
-            super.setStrength(strength);
-        } else if (strength > 15){
-            super.setStrength(15);
-            System.out.println("Your maximum strength is 15");
-        }
+        super(n, 3, 8, 8, 15, 3, 6);
     }
 
     public Spell getSpell() {

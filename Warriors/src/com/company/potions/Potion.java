@@ -16,16 +16,12 @@ public abstract class Potion extends Case {
         this.potionLife = pLife;
     }
 
-    @Override
-    public void interact(Perso perso) {
-        if (perso instanceof Wizard){
-            System.out.println("");
-        } else if (perso instanceof Warrior){
-            System.out.println("");
-        } else {
-            System.out.println("");
-        }
+    public void interact(Perso perso){
+        perso.setPotion(this);
+        perso.setLife(perso.getLife() + this.getPotionLife());
+        System.out.println("Chouette une potion de vie " + getName() + " , " + getPotionLife() + " points de vie supplémentaires!");
     }
+
 
     public int getPotionLife() {
         return potionLife;
