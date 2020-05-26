@@ -92,6 +92,7 @@ public class Game {
         tour = tour + 1;
         // lance le dé au hasard
         dice = this.giveDice(1, 6);
+        System.out.println("Avance de " + dice + " cases.");
         try {
             controle(posPlayer += dice);
         } catch (PersonnageHorsPlateauException e) {
