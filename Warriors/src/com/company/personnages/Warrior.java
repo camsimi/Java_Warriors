@@ -25,6 +25,6 @@ public class Warrior extends Perso {
     @Override
     public String toString() {
         return super.toString() +
-                ", mon arme est une: " + weapon;
+                ", mon arme est une " + weapon;
     }
 }

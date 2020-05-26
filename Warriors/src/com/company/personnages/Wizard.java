@@ -5,8 +5,6 @@ public class Wizard extends Perso {
     private Spell spell;
 
     public Wizard() {
-
-//        super("Anonymous wizard", 3, 8, 8, 15, 3, 6);
         this("Anonymous wizard");
     }
 

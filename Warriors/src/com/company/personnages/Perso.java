@@ -53,11 +53,15 @@ public abstract class Perso {
     }
 
     public void setLife(int life) {
-        if ((life>=this.getMinLife()) && (life<=this.getMaxLife()) ) {
+        if (life<=this.getMaxLife() && (life > 0)) {
             this.life = life;
         } else if (life > this.getMaxLife()){
             System.out.println("Your maximum life is " + this.getMaxLife());
             this.life = this.getMaxLife();
+        }
+        if (life <= 0) {
+            this.life = 0;
+            System.out.println("Aaaaah c'est la fin pour moi!");
         }
     }
 
@@ -84,8 +88,8 @@ public abstract class Perso {
     @Override
     public String toString() {
         return "Je m'appelle " + name +
-                ", j'ai " + strength + " points de force, " +
-                life + " points de vie" +
+                ", j'ai " + strength + " point(s) de force, " +
+                life + " point(s) de vie" +
                 ", ma potion est une " + potion;
     }
 }
