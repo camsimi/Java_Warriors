@@ -94,6 +94,7 @@ public class Game {
         dice = this.giveDice(1, 6);
         // affiche l'avancement en nombre de cases
         System.out.println("Avance de " + dice + " cases.");
+        System.out.println("...**********.....");
         try {
             controle(posPlayer += dice);
         } catch (PersonnageHorsPlateauException e) {
@@ -106,7 +107,7 @@ public class Game {
             Case CaseCourante = plateau.getCase(posPlayer);
             System.out.println("Case " + posPlayer + "/64 " + CaseCourante.toString());
 // Interaction de la case avec le personnage
-            CaseCourante.interact(perso);
+            CaseCourante.interact(perso, plateau);
 // Affichage infos/attributs perso
             System.out.println(perso.toString());
             System.out.println("-----------------------------------------------------");
@@ -122,8 +123,14 @@ public class Game {
         plateau.mix();
         System.out.println("-----------------------------------------------------");
         do {
-            jouer_un_tour(perso);
-            sc.nextLine();
+            if (perso.getLife() > 0 ) {
+                jouer_un_tour(perso);
+                sc.nextLine();
+            }
+            else {
+                System.out.println("Tu as perdu le jeu!");
+                break;
+            }
 // tant que la position du joueur est inférieure à la dernière case du plateau, boucler sur le code précédent
         } while (posPlayer < plateauLength);
         if (posPlayer == plateauLength) {

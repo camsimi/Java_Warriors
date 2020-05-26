@@ -1,6 +1,7 @@
 package com.company.potions;
 
 import com.company.Case;
+import com.company.Plateau;
 import com.company.personnages.Perso;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
@@ -16,7 +17,8 @@ public abstract class Potion extends Case {
         this.potionLife = pLife;
     }
 
-    public void interact(Perso perso){
+    @Override
+    public void interact(Perso perso, Plateau plateau){
         System.out.println("Chouette une potion de vie " + getName() + " , " + getPotionLife() + " points de vie supplémentaires!");
         perso.setPotion(this);
         addLife(perso);

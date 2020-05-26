@@ -47,4 +47,8 @@ public class Plateau extends Case {
     public Case getCase(int numCase) {
         return plateau.get(numCase);
     }
+
+    public void setCase(int numCase, Case Case){
+        plateau.set(numCase, Case);
+    }
 }

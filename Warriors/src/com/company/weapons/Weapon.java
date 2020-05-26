@@ -1,8 +1,11 @@
 package com.company.weapons;
 import com.company.Case;
+import com.company.Plateau;
 import com.company.personnages.Perso;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
+
+import java.util.ArrayList;
 
 public abstract class Weapon extends Case {
     protected int weaponStrength;
@@ -17,7 +20,7 @@ public abstract class Weapon extends Case {
     }
 
     @Override
-    public void interact(Perso perso) {
+    public void interact(Perso perso, Plateau plateau) {
         if (perso instanceof Wizard){
             System.out.println("Oh une arme, c'est nul je ne peux pas la prendre, je suis une magicienne!");
         }

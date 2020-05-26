@@ -2,6 +2,8 @@ package com.company;
 
 import com.company.personnages.Perso;
 
+import java.util.ArrayList;
+
 public abstract class Case {
     protected String name = "";
     protected int num;
@@ -40,8 +42,7 @@ public abstract class Case {
        return this.name;
     }
 
-    public void interact(Perso perso){
-
+    public void interact(Perso perso, Plateau plateau){
         System.out.println("Interaction avec " + perso.getName());
     }
 }

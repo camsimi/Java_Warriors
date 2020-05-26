@@ -1,9 +1,11 @@
 package com.company.ennemis;
 
 import com.company.Case;
+import com.company.CaseVide;
+import com.company.Plateau;
 import com.company.personnages.Perso;
-import com.company.personnages.Warrior;
-import com.company.personnages.Wizard;
+
+import java.util.ArrayList;
 
 public abstract class Ennemi extends Case {
     private int life;
@@ -40,11 +42,10 @@ public abstract class Ennemi extends Case {
         return super.toString()
                 + ", il a " + getStrength() + " en force d'attaque et "
                 + getLife() + " point(s) de vie.";
-
     }
 
-    @Override
-    public void interact(Perso perso) {
+
+    public void interact(Perso perso, Plateau plateau) {
         System.out.println(perso.getName() + ": Prête pour la bagarre " + this.getName() + " ?");
         System.out.println("Prends ça! " + perso.getStrength() + " point(s) de force d'attaque sur toi!");
         this.setLife(this.getLife() - perso.getStrength());
@@ -52,6 +53,10 @@ public abstract class Ennemi extends Case {
         if ((this.getStrength() > 0) && (this.getLife() > 0)) {
             System.out.println(this.getName() + ": Si tu le prends comme ça " + perso.getName() + ", je t'attaque avec " + this.getStrength() + " point(s) de force!");
             perso.setLife(perso.getLife() - this.getStrength());
+        }
+        if (this.getLife() <=0 ){
+            plateau.setCase(this.getNum(), new CaseVide(this.getNum()));
+            System.out.println("Case numéro " + this.getNum() +"/64 --> " + plateau.getCase(this.getNum()));
         }
     }
 }
