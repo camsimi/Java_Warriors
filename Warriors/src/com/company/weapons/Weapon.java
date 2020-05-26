@@ -21,14 +21,15 @@ public abstract class Weapon extends Case {
         if (perso instanceof Wizard){
             System.out.println("Oh une arme, c'est nul je ne peux pas la prendre, je suis une magicienne!");
         }
+        else if (perso instanceof Warrior){
+            System.out.println("Youpi, je suis maintenant armée d'une " + getName() + ", " + getWeaponStrength() + " points de force supplémetaires!");
+            ((Warrior) perso).setWeapon(this);
+            addWeaponStrength(perso);
+        }
     }
 
-    public int getWeaponStrenght() {
+    public int getWeaponStrength() {
         return weaponStrength;
-    }
-
-    public void setWeaponStrenght(int weaponStrenght) {
-        this.weaponStrength = weaponStrenght;
     }
 
     public void addWeaponStrength(Perso perso){

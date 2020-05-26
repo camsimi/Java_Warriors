@@ -21,15 +21,15 @@ public abstract class Spell extends Case {
         if (perso instanceof Warrior){
             System.out.println("Oh un sort, c'est nul je ne peux pas le prendre, je suis une guerrière!");
         }
+        else if (perso instanceof Wizard){
+            System.out.println("Youpi, j'ai maintenant un sort " + getName() + ", " + this.getSpellStrength() + " points de force supplémentaires!");
+            ((Wizard) perso).setSpell(this);
+            this.addSpellStrength(perso);
+        }
     }
 
     public int getSpellStrength() {
         return spellStrength;
-    }
-
-    public void setSpellStrength(int spellStrength) {
-
-        this.spellStrength = spellStrength;
     }
 
     public void addSpellStrength(Perso perso){

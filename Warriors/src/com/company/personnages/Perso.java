@@ -69,38 +69,21 @@ public abstract class Perso {
         return minStrength;
     }
 
-    public void setMinStrength(int minStrength) {
-        this.minStrength = minStrength;
-    }
-
     public int getMaxStrength() {
         return maxStrength;
-    }
-
-    public void setMaxStrength(int maxStrength) {
-        this.maxStrength = maxStrength;
     }
 
     public int getMinLife() {
         return minLife;
     }
 
-    public void setMinLife(int minLife) {
-        this.minLife = minLife;
-    }
-
     public int getMaxLife() {
         return maxLife;
     }
 
-    public void setMaxLife(int maxLife) {
-        this.maxLife = maxLife;
-    }
-
     @Override
     public String toString() {
-        return "Perso: " +
-                "Je m'appelle " + name +
+        return "Je m'appelle " + name +
                 ", j'ai " + strength + " points de force, " +
                 life + " points de vie" +
                 ", ma potion est une " + potion;

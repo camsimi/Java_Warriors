@@ -17,18 +17,13 @@ public abstract class Potion extends Case {
     }
 
     public void interact(Perso perso){
-        perso.setPotion(this);
-        perso.setLife(perso.getLife() + this.getPotionLife());
         System.out.println("Chouette une potion de vie " + getName() + " , " + getPotionLife() + " points de vie supplémentaires!");
+        perso.setPotion(this);
+        addLife(perso);
     }
-
 
     public int getPotionLife() {
         return potionLife;
-    }
-
-    public void setPotionLife(int potionLife) {
-        this.potionLife = potionLife;
     }
 
     public void addLife(Perso perso){

@@ -38,7 +38,6 @@ public class Plateau extends Case {
 
     public void mix(){
         Collections.shuffle(plateau);
-        System.out.println(plateau);
     }
 
     public int getPlateauLength() {

@@ -107,10 +107,9 @@ public class Game {
             CaseCourante.interact(perso);
 // Affichage infos/attributs perso
             System.out.println(perso.toString());
-            System.out.println("-----------------------------------------");
+            System.out.println("-----------------------------------------------------");
         }
 
-        // s'équiper d'un bonus
         // lancer un combat
         // mettre à jour le statut d'avancement du jeu (en cours/quitter la partie/perso mort,...)
         // gérer plusieurs joueurs
@@ -119,10 +118,10 @@ public class Game {
     public void play(Menu menu, Perso perso) {
         // plateau aléatoire
         plateau.mix();
-        System.out.println("------------------------------------");
+        System.out.println("-----------------------------------------------------");
         do {
             jouer_un_tour(perso);
-
+            sc.nextLine();
 // tant que la position du joueur est inférieure à la dernière case du plateau, boucler sur le code précédent
         } while (posPlayer < plateauLength);
         if (posPlayer == plateauLength) {
