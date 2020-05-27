@@ -29,6 +29,6 @@ public abstract class Case {
     }
 
     public void interact(Perso perso, Plateau plateau){
-        System.out.println("Aucune interaction avec " + perso.getName() + " poursuis ta route.");
+        System.out.println("Aucune interaction avec " + perso.getName() + ", poursuis ta route.");
     }
 }

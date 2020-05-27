@@ -95,6 +95,13 @@ public abstract class Perso {
         this.posPlayer = posPlayer;
     }
 
+    public void fuir(int random){
+        int newPosition = getPosition() - random;
+        setPosition(newPosition);
+        System.out.println("Je m'enfuis et je recule de " + random + " case(s).");
+        System.out.println("...**********.....");
+    }
+
     @Override
     public String toString() {
         return "Je m'appelle " + name +
