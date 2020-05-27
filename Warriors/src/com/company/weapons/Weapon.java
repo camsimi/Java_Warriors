@@ -9,7 +9,6 @@ public abstract class Weapon extends Case {
     protected int weaponStrength;
 
     public Weapon(){
-
     }
 
     public Weapon (String wName, int wStrength){
@@ -17,6 +16,7 @@ public abstract class Weapon extends Case {
         this.weaponStrength = wStrength;
     }
 
+    @Override
     public void interact(Perso perso, Plateau plateau) {
         if (perso instanceof Wizard){
             System.out.println("Oh une arme, c'est nul je ne peux pas la prendre, je suis une magicienne!");

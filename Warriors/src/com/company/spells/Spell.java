@@ -7,7 +7,7 @@ import com.company.personnages.Perso;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
 
-public abstract class Spell extends Case implements Interact {
+public abstract class Spell extends Case {
     protected int spellStrength;
 
     public Spell(){
@@ -18,6 +18,7 @@ public abstract class Spell extends Case implements Interact {
         this.spellStrength = sStrength;
     }
 
+    @Override
     public void interact(Perso perso, Plateau plateau) {
         if (perso instanceof Warrior){
             System.out.println("Oh un sort, c'est nul je ne peux pas le prendre, je suis une guerrière!");

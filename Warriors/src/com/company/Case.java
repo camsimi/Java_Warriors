@@ -2,7 +2,7 @@ package com.company;
 
 import com.company.personnages.Perso;
 
-public abstract class Case {
+public abstract class Case implements Interact{
     protected String name = "";
 
     public Case(){
@@ -25,7 +25,8 @@ public abstract class Case {
        return this.name;
     }
 
-    public void interact(Perso perso, Plateau plateau){
+    @Override
+    public void interact(Perso perso, Plateau plateau) {
         System.out.println("Aucune interaction avec " + perso.getName() + ", poursuis ta route.");
     }
 }

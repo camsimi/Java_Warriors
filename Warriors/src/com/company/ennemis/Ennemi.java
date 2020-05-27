@@ -8,7 +8,7 @@ import com.company.personnages.Perso;
 
 import java.util.ArrayList;
 
-public abstract class Ennemi extends Case implements Interact {
+public abstract class Ennemi extends Case{
     private int life;
     private int strength;
 
@@ -45,6 +45,7 @@ public abstract class Ennemi extends Case implements Interact {
                 + getLife() + " point(s) de vie.";
     }
 
+    @Override
     public void interact(Perso perso, Plateau plateau) {
         System.out.println(perso.getName() + ": Prête pour la bagarre " + this.getName() + " ?");
         System.out.println("Prends ça! " + perso.getStrength() + " point(s) de force d'attaque sur toi!");
