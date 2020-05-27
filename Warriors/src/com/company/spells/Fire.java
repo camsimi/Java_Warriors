@@ -5,7 +5,7 @@ import com.company.personnages.Wizard;
 
 public class Fire extends Spell{
 
-    public Fire(int num){
-        super("Fire", 7, num);
+    public Fire(){
+        super("Fire", 7);
     }
 }

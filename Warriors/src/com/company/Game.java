@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Game {
     // attribut qui stocke la position du joueur
-    int posPlayer = 0;
+    int posPlayer;
     int tour = 0;
     int dice = 0;
     Plateau plateau = new Plateau();
@@ -95,12 +95,14 @@ public class Game {
         // affiche l'avancement en nombre de cases
         System.out.println("Avance de " + dice + " cases.");
         System.out.println("...**********.....");
+
         try {
             controle(posPlayer += dice);
         } catch (PersonnageHorsPlateauException e) {
             posPlayer = plateauLength;
             System.out.println(e.getMessage());
         }
+        perso.setPosition(posPlayer);
 // Si le joueur n'a pas atteint la case 64
         if (posPlayer != plateauLength) {
 // récupération de la case courante avec la position du joueur
@@ -119,6 +121,7 @@ public class Game {
     }
 
     public void play(Menu menu, Perso perso) {
+        posPlayer = perso.getPosition();
         // plateau aléatoire
         plateau.mix();
         System.out.println("-----------------------------------------------------");

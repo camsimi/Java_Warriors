@@ -11,8 +11,8 @@ public abstract class Ennemi extends Case {
     private int life;
     private int strength;
 
-    public Ennemi(String name, int life, int strength, int num) {
-        super(name, num);
+    public Ennemi(String name, int life, int strength) {
+        super(name);
         this.life = life;
         this.strength = strength;
     }
@@ -55,8 +55,8 @@ public abstract class Ennemi extends Case {
             perso.setLife(perso.getLife() - this.getStrength());
         }
         if (this.getLife() <=0 ){
-            plateau.setCase(this.getNum(), new CaseVide(this.getNum()));
-            System.out.println("Case numéro " + this.getNum() +"/64 --> " + plateau.getCase(this.getNum()));
+            plateau.setCase(perso.getPosition(), new CaseVide());
+            System.out.println("Case numéro " + perso.getPosition() +"/64 --> " + plateau.getCase(perso.getPosition()));
         }
     }
 }

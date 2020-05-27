@@ -12,8 +12,8 @@ public abstract class Potion extends Case {
     public Potion(){
     }
 
-    public Potion(String pName, int pLife, int num){
-        super(pName, num);
+    public Potion(String pName, int pLife){
+        super(pName);
         this.potionLife = pLife;
     }
 

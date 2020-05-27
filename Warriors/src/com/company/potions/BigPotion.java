@@ -4,8 +4,8 @@ import com.company.personnages.Perso;
 
 public class BigPotion extends Potion{
 
-    public BigPotion(int num){
+    public BigPotion(){
 
-        super("BigPotion", 5, num);
+        super("BigPotion", 5);
     }
 }

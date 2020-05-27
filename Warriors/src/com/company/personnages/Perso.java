@@ -10,6 +10,7 @@ public abstract class Perso {
     private int minLife;
     private int maxLife;
     private Potion potion;
+    int posPlayer;
 
     public Perso(String pName, int pLife, int pStrength, int minStrength, int maxStrength, int minLife, int maxLife){
         this.name = pName;
@@ -19,6 +20,7 @@ public abstract class Perso {
         this.maxStrength = maxStrength;
         this.minLife = minLife;
         this.maxLife = maxLife;
+        this.posPlayer = 0;
     }
 
     public String getName() {
@@ -83,6 +85,14 @@ public abstract class Perso {
 
     public int getMaxLife() {
         return maxLife;
+    }
+
+    public int getPosition() {
+        return posPlayer;
+    }
+
+    public void setPosition(int posPlayer) {
+        this.posPlayer = posPlayer;
     }
 
     @Override

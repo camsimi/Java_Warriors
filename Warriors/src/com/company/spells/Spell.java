@@ -12,8 +12,8 @@ public abstract class Spell extends Case {
     public Spell(){
     }
 
-    public Spell(String sName, int sStrength, int num){
-        super(sName, num);
+    public Spell(String sName, int sStrength){
+        super(sName);
         this.spellStrength = sStrength;
     }
 
