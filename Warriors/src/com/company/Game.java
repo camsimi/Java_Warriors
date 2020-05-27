@@ -97,15 +97,18 @@ public class Game {
         System.out.println("...**********.....");
         try {
             controle(perso.getPosition() + dice);
+            perso.setPosition(perso.getPosition() + dice);
         } catch (PersonnageHorsPlateauException e) {
             perso.setPosition(plateauLength);
             System.out.println(e.getMessage());
         }
-        perso.setPosition(perso.getPosition() + dice);
+
         // Si le joueur n'a pas atteint la case 64
         if (perso.getPosition() != plateauLength) {
+            // récupération de la case courante avec la position du joueur
+           Case caseCourante = plateau.getCase(perso.getPosition());
             // Interaction de la case avec le personnage
-            this.decision(perso);
+            this.decision(perso, caseCourante);
             // Affichage infos/attributs perso
             System.out.println(perso.toString());
             System.out.println("-----------------------------------------------------");
@@ -116,10 +119,9 @@ public class Game {
         // gérer plusieurs joueurs
     }
 
-    public void decision(Perso perso) {
+    public void decision(Perso perso, Case caseCourante) {
         String choice;
-        // récupération de la case courante avec la position du joueur
-        Case caseCourante = plateau.getCase(perso.getPosition());
+
         System.out.println("Case " + perso.getPosition() + "/64 " + caseCourante.toString());
         if (caseCourante instanceof Ennemi) {
             do {
@@ -136,7 +138,7 @@ public class Game {
                         System.out.println(e.getMessage());
                     }
                     caseCourante = plateau.getCase(perso.getPosition());
-                    this.decision(perso);
+                    this.decision(perso, caseCourante);
                 } else {
                     System.out.println("Tu dois choisir entre C et E!");
                 }

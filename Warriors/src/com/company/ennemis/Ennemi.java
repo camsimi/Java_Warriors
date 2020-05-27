@@ -2,12 +2,13 @@ package com.company.ennemis;
 
 import com.company.Case;
 import com.company.CaseVide;
+import com.company.Interact;
 import com.company.Plateau;
 import com.company.personnages.Perso;
 
 import java.util.ArrayList;
 
-public abstract class Ennemi extends Case {
+public abstract class Ennemi extends Case implements Interact {
     private int life;
     private int strength;
 
@@ -43,7 +44,6 @@ public abstract class Ennemi extends Case {
                 + ", il a " + getStrength() + " en force d'attaque et "
                 + getLife() + " point(s) de vie.";
     }
-
 
     public void interact(Perso perso, Plateau plateau) {
         System.out.println(perso.getName() + ": Prête pour la bagarre " + this.getName() + " ?");

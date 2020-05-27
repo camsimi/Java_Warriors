@@ -2,13 +2,10 @@ package com.company;
 
 import com.company.personnages.Perso;
 
-import java.util.ArrayList;
-
 public abstract class Case {
     protected String name = "";
 
     public Case(){
-
     }
 
     public Case(String name){
