@@ -1,8 +1,4 @@
 package com.company;
-import com.company.personnages.Perso;
-import com.company.personnages.PersonnageHorsPlateauException;
-import com.company.personnages.Warrior;
-import com.company.personnages.Wizard;
 import java.util.Scanner;
 
 public class Menu {

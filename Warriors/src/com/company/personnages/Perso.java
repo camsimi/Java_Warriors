@@ -2,15 +2,15 @@ package com.company.personnages;
 import com.company.potions.Potion;
 
 public abstract class Perso {
-    private String name = "Perso Anonymous";
+    private String name;
     private int strength;
     private int life;
-    private int minStrength;
-    private int maxStrength;
-    private int minLife;
-    private int maxLife;
+    private final int minStrength;
+    private final int maxStrength;
+    private final int minLife;
+    private final int maxLife;
     private Potion potion;
-    int posPlayer;
+    private int posPlayer;
 
     public Perso(String pName, int pLife, int pStrength, int minStrength, int maxStrength, int minLife, int maxLife){
         this.name = pName;

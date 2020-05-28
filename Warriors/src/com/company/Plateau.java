@@ -11,12 +11,11 @@ import com.company.weapons.Epee;
 import com.company.weapons.Massue;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
 
 public class Plateau extends Case {
     ArrayList<Case> plateau;
-    private int plateauLength = 64;
+    private final int plateauLength = 64;
 
     public Plateau() {
         this.plateau = new ArrayList<Case>(this.plateauLength);
@@ -38,7 +37,6 @@ public class Plateau extends Case {
 
     public void mix(){
         Collections.shuffle(plateau);
-        System.out.println(plateau);
     }
 
     public int getPlateauLength() {
