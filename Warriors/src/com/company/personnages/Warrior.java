@@ -15,7 +15,7 @@ public class Warrior extends Perso {
 
     /**
      * Constructeur de Warrior qui prend un paramètre n
-     * @param n
+     * @param n de type chaîne de caractère qui récupère le nom du Warrior
      */
     public Warrior(String n) {
         super(n, 5, 5, 5, 10, 5, 10);

@@ -12,15 +12,16 @@ import java.util.Scanner;
  * Représente le déroulé du jeu avec plusieurs méthodes qui servent à créer un nouveau personnage, à quitter le jeu,
  * à joueur un tour, à lancer le dé, prendre une décision entre combattre ou fuir, et afficher les infos du personnage.
  *
- * Les méthodes de cette classe sont appelé dans le main de la classe Main
- * @see Main
- *
- * Il est caractérisé par les attributs suivants:
+ * <p>
+ * Il est caractérisé par les attributs suivants: </p>
  * <ul>
  *     <li>Un plateau de type Plateau qui contient toutes les cases</li>
  *     <li>Un entier qui stocke la taille du plateau</li>
  *     <li>Un objet de type Scanner qui récupère les inputs utilisateur</li>
  * </ul>
+ *
+ * Les méthodes de cette classe sont appelé dans le main de la classe Main
+ * @see Main
  *
  * @author camille
  * @version 1.0
@@ -38,7 +39,7 @@ public class Game {
     /**
      * Méthode qui permet de récupérer le type de personnage (wizard/warrior) avec un input utilisateur
      * @param menu de type Menu pour pouvoir accéder aux méthodes de l'instance menu comme quit()
-     * @return chaîne de caractère -> Wizard ou Warrior, le type de personnage choisi par l'utilisateur
+     * @return chaîne de caractère: Wizard ou Warrior, le type de personnage choisi par l'utilisateur
      */
     public String chooseType(Menu menu) {
         String persoType = "";
