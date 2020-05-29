@@ -128,7 +128,7 @@ public class Game {
     /**
      * Méthode permettant de lever une exception en cas de sorti du plateau (< 0 et > 64)
      * @param result de type entier soit le calcul résultant de la position du joueur sur le plateau
-     * @throws PersonnageHorsPlateauException
+     * @throws PersonnageHorsPlateauException qui gère quand le perso sort du plateau (<0 et >64)
      */
     private void controle(int result) throws PersonnageHorsPlateauException {
         // Si le joueur sort du plateau (en-dessous de 0, et au-dessus de 64)
@@ -166,7 +166,7 @@ public class Game {
             // récupération de la case courante avec la position du joueur
            Case caseCourante = plateau.getCase(perso.getPosition());
             // Interaction de la case avec le personnage
-            this.decision(perso, caseCourante);
+            decision(perso, caseCourante);
             // Affichage infos/attributs perso
             System.out.println(perso.toString());
             // Délimitation graphique des cases
@@ -238,7 +238,7 @@ public class Game {
             if (perso.getLife() > 0) {
                 // appel méthode jouer un tour
                 jouer_un_tour(perso);
-                // input Entrée pour marquer un temps entre chaque case
+                // input Entrée pour marquer un arrêt entre chaque case
                 sc.nextLine();
             } else {
                 // Si le joueur n'a plus de points de vie, affichage message Game Over

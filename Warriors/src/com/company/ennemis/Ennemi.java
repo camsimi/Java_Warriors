@@ -2,11 +2,8 @@ package com.company.ennemis;
 
 import com.company.Case;
 import com.company.CaseVide;
-import com.company.Interact;
 import com.company.Plateau;
 import com.company.personnages.Perso;
-
-import java.util.ArrayList;
 
 public abstract class Ennemi extends Case{
     private int life;
