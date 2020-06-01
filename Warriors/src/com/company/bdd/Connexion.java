@@ -1,13 +1,11 @@
 package com.company.bdd;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 public class Connexion {
-    protected Connection conn;
+    protected static Connection con;
 
-    public static void connect() {
-        Connection conn;
+    public static void connect() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Driver O.K.");
@@ -15,9 +13,24 @@ public class Connexion {
             String user = "camille";
             String password = "Tweezers";
 
-            conn = DriverManager.getConnection(url, user, password);
+            con = DriverManager.getConnection(url, user, password);
             System.out.println("Connexion effective !");
+            //Création d'un objet Statement
+            Statement state = con.createStatement();
+            // Récupérer les infos du personnage
+            //L'objet ResultSet contient le résultat de la requête SQL
+            ResultSet infosPerso = state.executeQuery(Query.getHeroes());
+            //On récupère les MetaData
+            ResultSetMetaData resultMeta = infosPerso.getMetaData();
+            // Afficher les infos du personnage
+            while (infosPerso.next()) {
+                for (int i = 1; i < resultMeta.getColumnCount(); i++) {
+                    System.out.println("\t" + resultMeta.getColumnName(i) + " --> " + infosPerso.getObject(i).toString());
+                }
+            }
 
+            infosPerso.close();
+            state.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
