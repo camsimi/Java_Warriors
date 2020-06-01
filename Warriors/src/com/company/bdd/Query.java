@@ -8,8 +8,8 @@ public class Query {
         return "SELECT * FROM Hero";
     }
 
-    public void getHero(){
-
+    public static String getHero(){
+        return "SELECT * FROM Hero WHERE ID = 2";
     }
 
     public void createHero(){
