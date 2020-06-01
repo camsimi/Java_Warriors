@@ -98,6 +98,7 @@ public abstract class Perso {
     public void fuir(int random){
         int newPosition = getPosition() - random;
         setPosition(newPosition);
+        System.out.println("...**********.....");
         System.out.println("Je m'enfuis et je recule de " + random + " case(s).");
         System.out.println("...**********.....");
     }

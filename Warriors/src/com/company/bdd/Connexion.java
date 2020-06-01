@@ -1,10 +1,13 @@
 package com.company.bdd;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Connexion {
+    protected Connection conn;
 
     public static void connect() {
+        Connection conn;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Driver O.K.");
@@ -12,7 +15,7 @@ public class Connexion {
             String user = "camille";
             String password = "Tweezers";
 
-            Connection conn = DriverManager.getConnection(url, user, password);
+            conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connexion effective !");
 
         } catch (Exception e) {

@@ -2,7 +2,6 @@ package com.company;
 
 import com.company.ennemis.Ennemi;
 import com.company.personnages.Perso;
-import com.company.personnages.PersonnageHorsPlateauException;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
 
@@ -145,6 +144,7 @@ public class Game {
     private void jouer_un_tour(Perso perso) {
         // lance le dé au hasard et stocke le résultat dans la variable dice
         int dice = this.giveDice();
+        System.out.println("...**********.....");
         // affiche l'avancement en nombre de cases
         System.out.println("Avance de " + dice + " case(s).");
         // Représentation graphique de l'avancement du joueur
@@ -169,8 +169,8 @@ public class Game {
             decision(perso, caseCourante);
             // Affichage infos/attributs perso
             System.out.println(perso.toString());
-            // Délimitation graphique des cases
-            System.out.println("-----------------------------------------------------");
+//            // Délimitation graphique des cases
+//            System.out.println("-----------------------------------------------------");
         }
     }
 
@@ -231,15 +231,16 @@ public class Game {
     public void play(Menu menu, Perso perso) {
         // appel méthode qui mélange aléatoirement les cases du plateau
         plateau.mix();
-        // Délimitation graphique des cases
-        System.out.println("-----------------------------------------------------");
         do {
+            // Délimitation graphique des cases
+            System.out.println("-----------------------------------------------------");
             // si le perso a toujours des points de vie
             if (perso.getLife() > 0) {
-                // appel méthode jouer un tour
-                jouer_un_tour(perso);
+                System.out.println("Appuie sur Entrée pour lancer le dé et avancer sur le plateau");
                 // input Entrée pour marquer un arrêt entre chaque case
                 sc.nextLine();
+                // appel méthode jouer un tour
+                jouer_un_tour(perso);
             } else {
                 // Si le joueur n'a plus de points de vie, affichage message Game Over
                 System.out.println("Tu as perdu le jeu!");

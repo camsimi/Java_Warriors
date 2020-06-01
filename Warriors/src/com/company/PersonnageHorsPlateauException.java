@@ -1,4 +1,4 @@
-package com.company.personnages;
+package com.company;
 
 public class PersonnageHorsPlateauException extends Exception {
 
