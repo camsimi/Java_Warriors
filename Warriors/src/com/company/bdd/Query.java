@@ -1,9 +1,4 @@
 package com.company.bdd;
-
-import com.company.personnages.Warrior;
-import com.company.personnages.Wizard;
-
-import java.nio.channels.SelectableChannel;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -79,18 +74,22 @@ public class Query {
         prepare.executeUpdate();
     }
 
-    public static void updateHero(Connection connect, int id) throws SQLException {
-        String query = "UPDATE `Hero` SET `LIFE`= 10,`STRENGTH`= 10 WHERE ID = ?";
+    public static void updateHero(Connection connect) throws SQLException {
+        String query = "UPDATE `Hero` SET `NAME`= ? WHERE NAME = ?";
         PreparedStatement prepare = connect.prepareStatement(query);
-        prepare.setInt(1, id);
-//            result.updateString("NAME", "Girlic");
-//            infosPerso.updateInt("LIFE", 12);
-//            infosPerso.updateRow();
-//            System.out.println("Infos perso à l'ID 2 après modifications:");
-//            System.out.println("NAME: " + infosPerso.getString("NAME") + ", LIFE: " + infosPerso.getInt("LIFE"));
+        System.out.println("Enter the name of the hero you want to change:");
+        String name = sc.nextLine();
+        System.out.println("Enter the new name of your hero:");
+        String nameUpdated = sc.nextLine();
+        prepare.setString(2, name);
+        prepare.setString(1, nameUpdated);
+        prepare.executeUpdate();
     }
 
-    public static void deleteHero(int id) {
-//        DELETE FROM `Hero` WHERE 0
+    public static void deleteHero(Connection connect, int id) throws SQLException {
+        String query = " DELETE FROM `Hero` WHERE ID = ?";
+        PreparedStatement prepare = connect.prepareStatement(query);
+        prepare.setInt(1, id);
+        prepare.executeUpdate();
     }
 }
