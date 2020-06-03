@@ -1,13 +1,28 @@
 package com.company;
 
 import com.company.bdd.Connexion;
+import com.company.bdd.Query;
 import com.company.personnages.Perso;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
-        Connexion.connect();
+    public static void main(String[] args) {
+        try {
+
+//            Query.getHero(Connexion.getInstance());
+//            Query.createHero(Connexion.getInstance());
+            Query.getHeroes(Connexion.getInstance());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+//        finally {
+//            state.close();
+//            result.close();
+//        }
+
+
 //        // Instancie un nouveau menu
 //        Menu menu = new Menu();
 //        // Afficher le choix du menu (quitter ou créer un perso)
