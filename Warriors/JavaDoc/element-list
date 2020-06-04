@@ -1,6 +1,8 @@
 com.company
+com.company.bdd
 com.company.ennemis
 com.company.personnages
+com.company.plateau
 com.company.potions
 com.company.spells
 com.company.weapons
