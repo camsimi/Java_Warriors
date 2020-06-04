@@ -2,7 +2,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Menu {
-Scanner sc = new Scanner(System.in);
+public Scanner sc = new Scanner(System.in);
 
     public void display(){
         System.out.println("Create new perso");

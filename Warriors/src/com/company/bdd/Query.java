@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Query {
     private static final Scanner sc = new Scanner(System.in);
+    private static Statement state;
+    private static PreparedStatement prepare;
+    private static ResultSet result;
 
     // Récupérer les infos de tous les personnages
     public static void getHeroes(Connection connect) throws SQLException {
@@ -91,5 +94,29 @@ public class Query {
         PreparedStatement prepare = connect.prepareStatement(query);
         prepare.setInt(1, id);
         prepare.executeUpdate();
+    }
+
+    public static void closeState() {
+        try {
+            state.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static void closePrepare()  {
+        try {
+            prepare.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static void closeResult(){
+        try {
+            result.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

@@ -35,7 +35,6 @@ public abstract class Spell extends Case {
     }
 
     public void addSpellStrength(Perso perso){
-
         perso.setStrength(perso.getStrength() + this.spellStrength);
     }
 }

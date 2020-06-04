@@ -3,13 +3,24 @@ package com.company.bdd;
 import java.sql.*;
 
 public class Connexion {
-    private static Connection connect;
+    private Connection connect;
+    private static Connexion instance;
     private static final String url = "jdbc:mysql://localhost:15501/projet_warrior";
     private static final String user = "camille";
     private static final String password = "Tweezers";
 
-    public static Connection getInstance() {
-        if (connect == null) {
+    private Connexion(){
+    }
+
+    public static Connexion getInstance() {
+        if (instance == null){
+            instance = new Connexion();
+        }
+        return instance;
+    }
+
+    public Connection getConnect() throws SQLException {
+        if ((connect == null) || (connect.isClosed())) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 System.out.println("Driver O.K.");
