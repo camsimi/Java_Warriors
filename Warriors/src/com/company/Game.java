@@ -4,6 +4,8 @@ import com.company.ennemis.Ennemi;
 import com.company.personnages.Perso;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;
+import com.company.plateau.Case;
+import com.company.plateau.Plateau;
 
 import java.util.Scanner;
 

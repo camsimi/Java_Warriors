@@ -1,8 +1,8 @@
 package com.company.ennemis;
 
-import com.company.Case;
-import com.company.CaseVide;
-import com.company.Plateau;
+import com.company.plateau.Case;
+import com.company.plateau.CaseVide;
+import com.company.plateau.Plateau;
 import com.company.personnages.Perso;
 
 public abstract class Ennemi extends Case{

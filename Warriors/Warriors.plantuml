@@ -4,7 +4,7 @@ title __WARRIORS's Class Diagram__\n
 
   namespace  {
     namespace om.company {
-      abstract class com.company.Case {
+      abstract class com.company.plateau.Case {
       }
     }
   }
@@ -12,7 +12,7 @@ title __WARRIORS's Class Diagram__\n
 
   namespace  {
     namespace om.company {
-      class com.company.CaseVide {
+      class com.company.plateau.CaseVide {
       }
     }
   }
@@ -28,7 +28,7 @@ title __WARRIORS's Class Diagram__\n
 
   namespace  {
     namespace om.company {
-      interface com.company.Interact {
+      interface com.company.plateau.Interact {
       }
     }
   }
@@ -60,7 +60,7 @@ title __WARRIORS's Class Diagram__\n
 
   namespace  {
     namespace om.company {
-      class com.company.Plateau {
+      class com.company.plateau.Plateau {
       }
     }
   }
@@ -236,12 +236,12 @@ title __WARRIORS's Class Diagram__\n
   }
   
 
-  com.company.Case .up.|> com.company.Interact
-  com.company.CaseVide -up-|> com.company.Case
-  com.company.Game o-- com.company.Plateau : plateau
-  com.company.Plateau -up-|> com.company.Case
+  com.company.plateau.Case .up.|> com.company.plateau.Interact
+  com.company.plateau.CaseVide -up-|> com.company.plateau.Case
+  com.company.Game o-- com.company.plateau.Plateau : plateau
+  com.company.plateau.Plateau -up-|> com.company.plateau.Case
   com.company.ennemis.Dragon -up-|> com.company.ennemis.Ennemi
-  com.company.ennemis.Ennemi -up-|> com.company.Case
+  com.company.ennemis.Ennemi -up-|> com.company.plateau.Case
   com.company.ennemis.Gobelin -up-|> com.company.ennemis.Ennemi
   com.company.ennemis.Sorcier -up-|> com.company.ennemis.Ennemi
   com.company.personnages.Perso o-- com.company.potions.Potion : potion
@@ -250,14 +250,14 @@ title __WARRIORS's Class Diagram__\n
   com.company.personnages.Wizard -up-|> com.company.personnages.Perso
   com.company.personnages.Wizard o-- com.company.spells.Spell : spell
   com.company.potions.BigPotion -up-|> com.company.potions.Potion
-  com.company.potions.Potion -up-|> com.company.Case
+  com.company.potions.Potion -up-|> com.company.plateau.Case
   com.company.potions.StandardPotion -up-|> com.company.potions.Potion
   com.company.spells.Eclair -up-|> com.company.spells.Spell
   com.company.spells.Fire -up-|> com.company.spells.Spell
-  com.company.spells.Spell -up-|> com.company.Case
+  com.company.spells.Spell -up-|> com.company.plateau.Case
   com.company.weapons.Epee -up-|> com.company.weapons.Weapon
   com.company.weapons.Massue -up-|> com.company.weapons.Weapon
-  com.company.weapons.Weapon -up-|> com.company.Case
+  com.company.weapons.Weapon -up-|> com.company.plateau.Case
 
 
 right footer

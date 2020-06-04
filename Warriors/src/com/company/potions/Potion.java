@@ -1,7 +1,7 @@
 package com.company.potions;
 
-import com.company.Case;
-import com.company.Plateau;
+import com.company.plateau.Case;
+import com.company.plateau.Plateau;
 import com.company.personnages.Perso;
 
 public abstract class Potion extends Case{

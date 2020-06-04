@@ -1,6 +1,6 @@
 package com.company.weapons;
-import com.company.Case;
-import com.company.Plateau;
+import com.company.plateau.Case;
+import com.company.plateau.Plateau;
 import com.company.personnages.Perso;
 import com.company.personnages.Warrior;
 import com.company.personnages.Wizard;

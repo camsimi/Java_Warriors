@@ -1,8 +1,8 @@
-package com.company;
+package com.company.plateau;
 
 import com.company.personnages.Perso;
 
-public abstract class Case implements Interact{
+public abstract class Case implements Interact {
     protected String name = "";
 
     public Case(){

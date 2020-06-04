@@ -1,8 +1,10 @@
-package com.company;
+package com.company.plateau;
 
 import com.company.ennemis.Dragon;
 import com.company.ennemis.Gobelin;
 import com.company.ennemis.Sorcier;
+import com.company.plateau.Case;
+import com.company.plateau.CaseVide;
 import com.company.potions.BigPotion;
 import com.company.potions.StandardPotion;
 import com.company.spells.Eclair;

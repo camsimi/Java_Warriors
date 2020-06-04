@@ -1,4 +1,4 @@
-package com.company;
+package com.company.plateau;
 
 import com.company.personnages.Perso;
 
