@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.company"},{"l":"com.company.ennemis"},{"l":"com.company.JDBC"},{"l":"com.company.personnages"},{"l":"com.company.plateau"},{"l":"com.company.potions"},{"l":"com.company.spells"},{"l":"com.company.weapons"}]

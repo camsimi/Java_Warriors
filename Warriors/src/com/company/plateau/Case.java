@@ -2,6 +2,9 @@ package com.company.plateau;
 
 import com.company.personnages.Perso;
 
+/**
+ * Permet de construire un objet de type Case par défaut
+ */
 public abstract class Case implements Interact {
     protected String name = "";
 

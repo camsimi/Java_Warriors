@@ -15,10 +15,17 @@ import com.company.weapons.Massue;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Représente un plateau avec des cases définies
+ */
 public class Plateau extends Case {
     ArrayList<Case> plateau;
     private final int plateauLength = 64;
 
+    /**
+     * Permet la construction d'un objet de type Plateau en remplissant un attribut plateau de type
+     * ArrayList avec différentes cases représentés par des objets de type Ennemi, Weapon, Spell, Potion ou CaseVide
+     */
     public Plateau() {
         this.plateau = new ArrayList<Case>(this.plateauLength);
         for (int i = 0; i < this.plateauLength; i++) {
@@ -37,6 +44,9 @@ public class Plateau extends Case {
         }
     }
 
+    /**
+     * Méthode qui permet de mélanger aléatoirement les cases du plateau
+     */
     public void mix(){
         Collections.shuffle(plateau);
     }

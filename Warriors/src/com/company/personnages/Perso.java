@@ -1,6 +1,18 @@
 package com.company.personnages;
 import com.company.potions.Potion;
 
+/**
+ * Représente un personnage type par défaut avec les attributs privés suivants:
+ * <ul>
+ *     <li>Le nom de type chaîne de caractère</li>
+ *     <li>La force d'attaque de type entier</li>
+ *     <li>Les points de vie de type entier</li>
+ *     <li>Les points de vie minimum et maximum de type entier</li>
+ *     <li>Les forces d'attaque minimum et maximum de type entier</li>
+ *     <li>La potion de type Potion</li>
+ *     <li>La position du joueur sur le plateau de type entier</li>
+ * </ul>
+ */
 public abstract class Perso {
     private String name;
     private int strength;
@@ -12,6 +24,16 @@ public abstract class Perso {
     private Potion potion;
     private int posPlayer;
 
+    /**
+     * Permet de construire un personnage par défaut avec tous les attributs définis
+     * @param pName de type chaîne de caractère
+     * @param pLife de type entier
+     * @param pStrength de type entier
+     * @param minStrength de type entier
+     * @param maxStrength de type entier
+     * @param minLife de type entier
+     * @param maxLife de type entier
+     */
     public Perso(String pName, int pLife, int pStrength, int minStrength, int maxStrength, int minLife, int maxLife){
         this.name = pName;
         this.life = pLife;
@@ -45,6 +67,11 @@ public abstract class Perso {
         }
     }
 
+    /**
+     * Mutateur qui permet de définir des points de force passés en paramètre et
+     * en prenant en compte les points de force minimum et maximum grâce aux attributs correspondants
+     * @param strength de type entier
+     */
     public void setStrength(int strength) {
         if ( (strength >=this.getMinStrength()) && (strength <=this.getMaxStrength()) ) {
             this.strength = strength;
@@ -54,6 +81,11 @@ public abstract class Perso {
         }
     }
 
+    /**
+     * Mutateur qui permet de définir des points de vie passés en paramètre et
+     * en prenant en compte les points de vie minimum et maximum grâce aux attributs correspondants
+     * @param life de type entier
+     */
     public void setLife(int life) {
         if (life<=this.getMaxLife() && (life > 0)) {
             this.life = life;
@@ -95,6 +127,11 @@ public abstract class Perso {
         this.posPlayer = posPlayer;
     }
 
+    /**
+     * Permet au personnage de fuir face à un ennemi
+     * Sa position est redéfinie en fonction de l'entier passé en paramètre
+     * @param random de type entier
+     */
     public void fuir(int random){
         int newPosition = getPosition() - random;
         setPosition(newPosition);
@@ -103,6 +140,10 @@ public abstract class Perso {
         System.out.println("...**********.....");
     }
 
+    /**
+     * Décrit l'objet Perso
+     * @return une chaîne de caractère qui représente l'objet
+     */
     @Override
     public String toString() {
         return "Je m'appelle " + name +
