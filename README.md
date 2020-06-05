@@ -1,6 +1,6 @@
 # Jeu Warrior en Java
 
-Projet école basé sur le principe des jeux de rôles Dungeons & Dragons. 
+Projet école basé sur le principe des jeux de rôles Dungeons & Dragons écrit en Java. 
 Interaction joueur en ligne de commande.
 
 
