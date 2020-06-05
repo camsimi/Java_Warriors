@@ -1,7 +1,10 @@
-package com.company.bdd;
+package com.company.JDBC;
 
 import java.sql.*;
 
+/**
+ * Classe qui gère la connexion à la base de données en utilisant la classe Connection du JDBC
+ */
 public class Connexion {
     private Connection connect;
     private static Connexion instance;
@@ -9,9 +12,17 @@ public class Connexion {
     private static final String user = "camille";
     private static final String password = "Tweezers";
 
+    /**
+     * constructeur vide privé pour ne pouvoir instancier d'objet de type Connexion seulement
+     * à l'intérieur de ses propres méthodes
+     */
     private Connexion(){
     }
 
+    /**
+     * Méthode publique et statique qui instancie un nouvel objet instance
+     * @return un object de type Connexion
+     */
     public static Connexion getInstance() {
         if (instance == null){
             instance = new Connexion();
@@ -19,6 +30,11 @@ public class Connexion {
         return instance;
     }
 
+    /**
+     * Méthode publique qui vérifie la présence du driver JDBC et permet la connexion  à la BDD
+     * @return un objet de type Connection
+     * @throws SQLException indique que cette méthode peut lever une exception de type SQLException
+     */
     public Connection getConnect() throws SQLException {
         if ((connect == null) || (connect.isClosed())) {
             try {

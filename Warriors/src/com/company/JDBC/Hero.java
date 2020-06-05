@@ -1,4 +1,4 @@
-package com.company.bdd;
+package com.company.JDBC;
 
 public class Hero {
     private int id;

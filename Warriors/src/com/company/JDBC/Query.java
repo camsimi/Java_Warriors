@@ -1,14 +1,24 @@
-package com.company.bdd;
+package com.company.JDBC;
 import java.sql.*;
 import java.util.Scanner;
 
+/**
+ * Classe qui gère les différentes reqûetes SQL du CRUD
+ */
 public class Query {
+    /**
+     * On instancie un nouvel objet sc de type Scanner pour récuperer les inputs utilisateur
+     */
     private static final Scanner sc = new Scanner(System.in);
     private static Statement state;
     private static PreparedStatement prepare;
     private static ResultSet result;
 
-    // Récupérer les infos de tous les personnages
+    /**
+     * Afficher les infos de tous les héros présents dans la table HERO
+     * @param connect de type Connection pour récupérer la connexion à la BDD
+     * @throws SQLException indique que cette méthode peut lever une exception de type SQLException
+     */
     public static void getHeroes(Connection connect) throws SQLException {
         //Création d'un objet Statement
         Statement state = connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -32,7 +42,11 @@ public class Query {
         }
     }
 
-    // recup infos d'un perso
+    /**
+     * Afficher toutes les infos d'un héro présent dans la table HERO
+     * @param connect de type CONNECTION pour récupérer la connexion à la BDD
+     * @throws SQLException indique que cette méthode peut lever une exception de type SQLException
+     */
     public static void getHero(Connection connect) throws SQLException {
         String query = "SELECT * FROM Hero WHERE ID = ?";
         PreparedStatement prepare = connect.prepareStatement(query);
@@ -46,6 +60,11 @@ public class Query {
         }
     }
 
+    /**
+     * Créer un nouvel héro dans la table HERO
+     * @param connect de type CONNECTION pour récupérer la connexion à la BDD
+     * @throws SQLException indique que cette méthode peut lever une exception de type SQLException
+     */
     public static void createHero(Connection connect) throws SQLException {
         String query = "INSERT INTO `Hero`(`TYPE`, `NAME`, `LIFE`, `STRENGTH`, `WEAPON/SPELL`, `POTION`) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement prepare = connect.prepareStatement(query);
@@ -77,6 +96,11 @@ public class Query {
         prepare.executeUpdate();
     }
 
+    /**
+     * Met à jour le nom d'un héro avec un input utlisateur
+     * @param connect de type CONNECTION pour récupérer la connexion à la BDD
+     * @throws SQLException indique que cette méthode peut lever une exception de type SQLException
+     */
     public static void updateHero(Connection connect) throws SQLException {
         String query = "UPDATE `Hero` SET `NAME`= ? WHERE NAME = ?";
         PreparedStatement prepare = connect.prepareStatement(query);
@@ -89,6 +113,12 @@ public class Query {
         prepare.executeUpdate();
     }
 
+    /**
+     * Supprimer un héro selon son ID (passé en paramètre de la méthode)
+     * @param connect de type CONNECTION pour récupérer la connexion à la BDD
+     * @param id de type entier pour identifier le héro à supprimer de la table
+     * @throws SQLException indique que cette méthode peut lever une exception de type SQLException
+     */
     public static void deleteHero(Connection connect, int id) throws SQLException {
         String query = " DELETE FROM `Hero` WHERE ID = ?";
         PreparedStatement prepare = connect.prepareStatement(query);
@@ -96,6 +126,11 @@ public class Query {
         prepare.executeUpdate();
     }
 
+    /**
+     * Permet de fermer l'objet state de type Statement
+     * Méthode publique et statique qui ne renvoie rien.
+     * Pour améliorer les performances en libérant les ressources du pilote
+     */
     public static void closeState() {
         try {
             state.close();
@@ -104,6 +139,11 @@ public class Query {
         }
     }
 
+    /**
+     * Permet de fermer l'objet prepare de type PrepareStatement
+     * Méthode publique et statique qui ne renvoie rien.
+     * Pour améliorer les performances en libérant les ressources du pilote
+     */
     public static void closePrepare()  {
         try {
             prepare.close();
@@ -112,6 +152,11 @@ public class Query {
         }
     }
 
+    /**
+     * Permet de fermer l'objet result de type ResultSet
+     * Méthode publique et statique qui ne renvoie rien.
+     * Pour améliorer les performances en libérant les ressources du pilote
+     */
     public static void closeResult(){
         try {
             result.close();
