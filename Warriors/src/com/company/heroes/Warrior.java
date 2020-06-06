@@ -1,11 +1,11 @@
-package com.company.personnages;
+package com.company.heroes;
 
 import com.company.weapons.Weapon;
 
 /**
  * Représente l'objet Warrior
  */
-public class Warrior extends Perso {
+public class Warrior extends Hero {
     /**
      * attribut privé propre au guerrier, représente une arme (classe abstraite de type Weapon)
      */
@@ -53,7 +53,12 @@ public class Warrior extends Perso {
      */
     @Override
     public String toString() {
-        return super.toString() +
-                ", mon arme est une " + weapon;
+        if (weapon != null) {
+            return super.toString() +
+                    ", mon arme est une " + weapon;
+        }
+        else {
+            return super.toString();
+        }
     }
 }

@@ -1,11 +1,11 @@
-package com.company.plateau;
+package com.company.board;
 
 /**
  * Représente une Case Vide qui hérite de la classe Case
  */
-public class CaseVide extends Case {
+public class EmptySquare extends Square {
 
-    public CaseVide(){
+    public EmptySquare(){
         super("CaseVide");
     }
 

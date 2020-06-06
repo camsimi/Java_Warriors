@@ -1,17 +1,17 @@
-package com.company.plateau;
+package com.company.board;
 
-import com.company.personnages.Perso;
+import com.company.heroes.Hero;
 
 /**
  * Permet de construire un objet de type Case par défaut
  */
-public abstract class Case implements Interact {
+public abstract class Square implements Interact {
     protected String name = "";
 
-    public Case(){
+    public Square(){
     }
 
-    public Case(String name){
+    public Square(String name){
         this.name = name;
     }
 
@@ -29,7 +29,7 @@ public abstract class Case implements Interact {
     }
 
     @Override
-    public void interact(Perso perso, Plateau plateau) {
-        System.out.println("Aucune interaction avec " + perso.getName() + ", poursuis ta route.");
+    public void interact(Hero hero, Board board) {
+        System.out.println("Aucune interaction avec " + this.getName() + ", poursuis ta route.");
     }
 }

@@ -1,7 +1,7 @@
 package com.company.weapons;
 
-public class Epee extends Weapon {
-    public Epee() {
+public class Sword extends Weapon {
+    public Sword() {
         super("Epée", 5);
     }
 }

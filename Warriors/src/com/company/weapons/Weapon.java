@@ -1,11 +1,11 @@
 package com.company.weapons;
-import com.company.plateau.Case;
-import com.company.plateau.Plateau;
-import com.company.personnages.Perso;
-import com.company.personnages.Warrior;
-import com.company.personnages.Wizard;
+import com.company.heroes.Hero;
+import com.company.board.Square;
+import com.company.board.Board;
+import com.company.heroes.Warrior;
+import com.company.heroes.Wizard;
 
-public abstract class Weapon extends Case {
+public abstract class Weapon extends Square {
     protected int weaponStrength;
 
     public Weapon(){
@@ -17,14 +17,14 @@ public abstract class Weapon extends Case {
     }
 
     @Override
-    public void interact(Perso perso, Plateau plateau) {
-        if (perso instanceof Wizard){
+    public void interact(Hero hero, Board board) {
+        if (hero instanceof Wizard){
             System.out.println("Oh une arme, c'est nul je ne peux pas la prendre, je suis une magicienne!");
         }
-        else if (perso instanceof Warrior){
-            System.out.println("Youpi, je suis maintenant armée d'une " + getName() + ", " + getWeaponStrength() + " points de force supplémetaires!");
-            ((Warrior) perso).setWeapon(this);
-            addWeaponStrength(perso);
+        else if (hero instanceof Warrior){
+            System.out.println("Youpi, je suis maintenant armée d'une " + getName() + ", " + getWeaponStrength() + " points de force supplémentaires!");
+            ((Warrior) hero).setWeapon(this);
+            addWeaponStrength(hero);
         }
     }
 
@@ -32,7 +32,7 @@ public abstract class Weapon extends Case {
         return weaponStrength;
     }
 
-    public void addWeaponStrength(Perso perso){
-        perso.setStrength(perso.getStrength() + this.weaponStrength);
+    public void addWeaponStrength(Hero hero){
+        hero.setStrength(hero.getStrength() + this.weaponStrength);
     }
 }

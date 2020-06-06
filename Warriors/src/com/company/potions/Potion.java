@@ -1,10 +1,10 @@
 package com.company.potions;
 
-import com.company.plateau.Case;
-import com.company.plateau.Plateau;
-import com.company.personnages.Perso;
+import com.company.board.Square;
+import com.company.heroes.Hero;
+import com.company.board.Board;
 
-public abstract class Potion extends Case{
+public abstract class Potion extends Square {
     protected int potionLife;
 
     public Potion(){
@@ -16,17 +16,17 @@ public abstract class Potion extends Case{
     }
 
     @Override
-    public void interact(Perso perso, Plateau plateau){
+    public void interact(Hero hero, Board board){
         System.out.println("Chouette une potion de vie " + getName() + " , " + getPotionLife() + " points de vie supplémentaires!");
-        perso.setPotion(this);
-        addLife(perso);
+        hero.setPotion(this);
+        addLife(hero);
     }
 
     public int getPotionLife() {
         return potionLife;
     }
 
-    public void addLife(Perso perso){
-        perso.setLife(perso.getLife() + this.potionLife);
+    public void addLife(Hero hero){
+        hero.setLife(hero.getLife() + this.potionLife);
     }
 }

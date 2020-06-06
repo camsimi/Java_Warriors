@@ -4,27 +4,22 @@ import java.util.Scanner;
 public class Menu {
 public Scanner sc = new Scanner(System.in);
 
-    public void display(){
-        System.out.println("Create new perso");
-        System.out.println("Quit game");
-    }
-
     public String chooseMenu(Game game) {
         String response;
-        String persoType = "";
+        String heroType = "";
         do {
-            System.out.println("Write '0' to quit or '1' to create a new perso:");
+            System.out.println("Tape '0' pour quitter ou '1' pour créer un nouveau personnage:");
             response = sc.nextLine();
             if (response.equals("0")) {
                 System.out.println("Bye bye");
                 this.quit();
             } else if (response.equals("1")) {
-                persoType = game.chooseType(this);
+                heroType = game.chooseType(this);
             } else {
-                System.out.println("You should type 0 or 1");
+                System.out.println("Tape 0 ou 1");
             }
         }while (!response.equals("1"));
-        return persoType;
+        return heroType;
     }
 
     public void quit(){

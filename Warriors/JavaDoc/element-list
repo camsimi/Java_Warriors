@@ -2,7 +2,7 @@ com.company
 com.company.ennemis
 com.company.JDBC
 com.company.personnages
-com.company.plateau
+com.company.board
 com.company.potions
 com.company.spells
 com.company.weapons

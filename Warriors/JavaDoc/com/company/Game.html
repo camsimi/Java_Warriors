@@ -101,8 +101,8 @@ extends java.lang.Object</pre>
  <p>
  Il est caractérisé par les attributs suivants: </p>
  <ul>
-     <li>Un plateau de type Plateau qui contient toutes les cases</li>
-     <li>Un entier qui stocke la taille du plateau</li>
+     <li>Un board de type Plateau qui contient toutes les cases</li>
+     <li>Un entier qui stocke la taille du board</li>
      <li>Un objet de type Scanner qui récupère les inputs utilisateur</li>
  </ul>
 
@@ -169,7 +169,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor" id="i1">
-<td class="colFirst"><code><a href="personnages/Perso.html" title="class in com.company.personnages">Perso</a></code></td>
+<td class="colFirst"><code><a href="personnages/Perso.html" title="class in com.company.heroes">Perso</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createPerso(com.company.Menu,java.lang.String)">createPerso</a></span>&#8203;(<a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu,
 java.lang.String&nbsp;persoType)</code></th>
 <td class="colLast">
@@ -178,7 +178,7 @@ java.lang.String&nbsp;persoType)</code></th>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#displayPerso(com.company.personnages.Perso,com.company.Menu)">displayPerso</a></span>&#8203;(<a href="personnages/Perso.html" title="class in com.company.personnages">Perso</a>&nbsp;perso,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#displayPerso(com.company.heroes.Hero,com.company.Menu)">displayPerso</a></span>&#8203;(<a href="personnages/Perso.html" title="class in com.company.heroes">Perso</a>&nbsp;hero,
 <a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu)</code></th>
 <td class="colLast">
 <div class="block">Choix entre afficher les infos du personnage ou quitter le jeu</div>
@@ -186,8 +186,8 @@ java.lang.String&nbsp;persoType)</code></th>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#play(com.company.Menu,com.company.personnages.Perso)">play</a></span>&#8203;(<a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu,
-<a href="personnages/Perso.html" title="class in com.company.personnages">Perso</a>&nbsp;perso)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#play(com.company.Menu,com.company.heroes.Perso)">play</a></span>&#8203;(<a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu,
+<a href="personnages/Perso.html" title="class in com.company.heroes">Perso</a>&nbsp;hero)</code></th>
 <td class="colLast">
 <div class="block">méthode qui boucle sur la méthode jouer_un_tour jusqu'à ce que le joueur ait gagné</div>
 </td>
@@ -245,13 +245,13 @@ java.lang.String&nbsp;persoType)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="displayPerso(com.company.personnages.Perso,com.company.Menu)">displayPerso</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">displayPerso</span>&#8203;(<span class="arguments"><a href="personnages/Perso.html" title="class in com.company.personnages">Perso</a>&nbsp;perso,
+<h3><a id="displayPerso(com.company.heroes.Hero,com.company.Menu)">displayPerso</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">displayPerso</span>&#8203;(<span class="arguments"><a href="personnages/Perso.html" title="class in com.company.heroes">Perso</a>&nbsp;hero,
 <a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu)</span></div>
 <div class="block">Choix entre afficher les infos du personnage ou quitter le jeu</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>perso</code> - de type Perso pour accéder à ses infos et sa méthode toString</dd>
+<dd><code>hero</code> - de type Perso pour accéder à ses infos et sa méthode toString</dd>
 <dd><code>menu</code> - de type Menu pour accéder à sa méthode quit()</dd>
 </dl>
 </section>
@@ -259,7 +259,7 @@ java.lang.String&nbsp;persoType)</code></th>
 <li class="blockList">
 <section class="detail">
 <h3><a id="createPerso(com.company.Menu,java.lang.String)">createPerso</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="personnages/Perso.html" title="class in com.company.personnages">Perso</a></span>&nbsp;<span class="memberName">createPerso</span>&#8203;(<span class="arguments"><a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu,
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="personnages/Perso.html" title="class in com.company.heroes">Perso</a></span>&nbsp;<span class="memberName">createPerso</span>&#8203;(<span class="arguments"><a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu,
 java.lang.String&nbsp;persoType)</span></div>
 <div class="block">Création nouveau personnage en appelant la méthode instanciatePerso()</div>
 <dl>
@@ -273,14 +273,14 @@ java.lang.String&nbsp;persoType)</span></div>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="play(com.company.Menu,com.company.personnages.Perso)">play</a></h3>
+<h3><a id="play(com.company.Menu,com.company.heroes.Perso)">play</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">play</span>&#8203;(<span class="arguments"><a href="Menu.html" title="class in com.company">Menu</a>&nbsp;menu,
-<a href="personnages/Perso.html" title="class in com.company.personnages">Perso</a>&nbsp;perso)</span></div>
+<a href="personnages/Perso.html" title="class in com.company.heroes">Perso</a>&nbsp;hero)</span></div>
 <div class="block">méthode qui boucle sur la méthode jouer_un_tour jusqu'à ce que le joueur ait gagné</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>menu</code> - de type Menu pour pouvoir appeler la méthode qui permet de choisir à nouveau le Menu entre jouer et quitter la partie</dd>
-<dd><code>perso</code> - de type Perso pour utiliser ses accesseurs et mutateurs de position</dd>
+<dd><code>hero</code> - de type Perso pour utiliser ses accesseurs et mutateurs de position</dd>
 </dl>
 </section>
 </li>

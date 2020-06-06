@@ -1,10 +1,10 @@
-package com.company.personnages;
+package com.company.heroes;
 import com.company.spells.Spell;
 
 /**
  * Représente l'objet Wizard
  */
-public class Wizard extends Perso {
+public class Wizard extends Hero {
     /**
      * attribut privé propre au magicien, représente un sort (classe abstraite de type Spell)
      */
@@ -51,7 +51,12 @@ public class Wizard extends Perso {
      */
     @Override
     public String toString() {
-        return super.toString() +
-                ", mon sort est un " + spell;
+        if (spell != null) {
+            return super.toString() +
+                    ", mon sort est un(e) " + spell;
+        }
+        else {
+            return super.toString();
+        }
     }
 }

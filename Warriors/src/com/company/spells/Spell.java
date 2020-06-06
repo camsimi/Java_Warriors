@@ -1,12 +1,12 @@
 package com.company.spells;
 
-import com.company.plateau.Case;
-import com.company.plateau.Plateau;
-import com.company.personnages.Perso;
-import com.company.personnages.Warrior;
-import com.company.personnages.Wizard;
+import com.company.board.Board;
+import com.company.heroes.Hero;
+import com.company.board.Square;
+import com.company.heroes.Warrior;
+import com.company.heroes.Wizard;
 
-public abstract class Spell extends Case {
+public abstract class Spell extends Square {
     protected int spellStrength;
 
     public Spell(){
@@ -18,14 +18,14 @@ public abstract class Spell extends Case {
     }
 
     @Override
-    public void interact(Perso perso, Plateau plateau) {
-        if (perso instanceof Warrior){
+    public void interact(Hero hero, Board board) {
+        if (hero instanceof Warrior){
             System.out.println("Oh un sort, c'est nul je ne peux pas le prendre, je suis une guerrière!");
         }
-        else if (perso instanceof Wizard){
+        else if (hero instanceof Wizard){
             System.out.println("Youpi, j'ai maintenant un sort " + getName() + ", " + this.getSpellStrength() + " points de force supplémentaires!");
-            ((Wizard) perso).setSpell(this);
-            this.addSpellStrength(perso);
+            ((Wizard) hero).setSpell(this);
+            this.addSpellStrength(hero);
         }
     }
 
@@ -33,7 +33,7 @@ public abstract class Spell extends Case {
         return spellStrength;
     }
 
-    public void addSpellStrength(Perso perso){
-        perso.setStrength(perso.getStrength() + this.spellStrength);
+    public void addSpellStrength(Hero hero){
+        hero.setStrength(hero.getStrength() + this.spellStrength);
     }
 }

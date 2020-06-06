@@ -1,8 +1,8 @@
 package com.company.spells;
 
-public class Eclair extends Spell{
+public class Lightning extends Spell{
 
-    public Eclair(){
+    public Lightning(){
         super("Eclair", 2);
     }
 }

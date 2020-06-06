@@ -6,7 +6,7 @@
 <title>Interact</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2020-06-05">
-<meta name="description" content="declaration: package: com.company.plateau, interface: Interact">
+<meta name="description" content="declaration: package: com.company.board, interface: Interact">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../script-dir/jquery-ui.css" title="Style">
@@ -84,14 +84,14 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.company.plateau</a></div>
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.company.board</a></div>
 <h1 title="Interface Interact" class="title">Interface Interact</h1>
 </div>
 <div class="contentContainer">
 <section class="description">
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="../potions/BigPotion.html" title="class in com.company.potions">BigPotion</a></code>, <code><a href="Case.html" title="class in com.company.plateau">Case</a></code>, <code><a href="CaseVide.html" title="class in com.company.plateau">CaseVide</a></code>, <code><a href="../ennemis/Dragon.html" title="class in com.company.ennemis">Dragon</a></code>, <code><a href="../spells/Eclair.html" title="class in com.company.spells">Eclair</a></code>, <code><a href="../ennemis/Ennemi.html" title="class in com.company.ennemis">Ennemi</a></code>, <code><a href="../weapons/Epee.html" title="class in com.company.weapons">Epee</a></code>, <code><a href="../spells/Fire.html" title="class in com.company.spells">Fire</a></code>, <code><a href="../ennemis/Gobelin.html" title="class in com.company.ennemis">Gobelin</a></code>, <code><a href="../weapons/Massue.html" title="class in com.company.weapons">Massue</a></code>, <code><a href="Plateau.html" title="class in com.company.plateau">Plateau</a></code>, <code><a href="../potions/Potion.html" title="class in com.company.potions">Potion</a></code>, <code><a href="../ennemis/Sorcier.html" title="class in com.company.ennemis">Sorcier</a></code>, <code><a href="../spells/Spell.html" title="class in com.company.spells">Spell</a></code>, <code><a href="../potions/StandardPotion.html" title="class in com.company.potions">StandardPotion</a></code>, <code><a href="../weapons/Weapon.html" title="class in com.company.weapons">Weapon</a></code></dd>
+<dd><code><a href="../potions/BigPotion.html" title="class in com.company.potions">BigPotion</a></code>, <code><a href="Square.html" title="class in com.company.board">Square</a></code>, <code><a href="CaseVide.html" title="class in com.company.board">CaseVide</a></code>, <code><a href="../ennemis/Dragon.html" title="class in com.company.enemies">Dragon</a></code>, <code><a href="../spells/Eclair.html" title="class in com.company.spells">Eclair</a></code>, <code><a href="../ennemis/Ennemi.html" title="class in com.company.enemies">Ennemi</a></code>, <code><a href="../weapons/Epee.html" title="class in com.company.weapons">Epee</a></code>, <code><a href="../spells/Fire.html" title="class in com.company.spells">Fire</a></code>, <code><a href="../ennemis/Gobelin.html" title="class in com.company.enemies">Gobelin</a></code>, <code><a href="../weapons/Massue.html" title="class in com.company.weapons">Massue</a></code>, <code><a href="Plateau.html" title="class in com.company.board">Plateau</a></code>, <code><a href="../potions/Potion.html" title="class in com.company.potions">Potion</a></code>, <code><a href="../ennemis/Sorcier.html" title="class in com.company.enemies">Sorcier</a></code>, <code><a href="../spells/Spell.html" title="class in com.company.spells">Spell</a></code>, <code><a href="../potions/StandardPotion.html" title="class in com.company.potions">StandardPotion</a></code>, <code><a href="../weapons/Weapon.html" title="class in com.company.weapons">Weapon</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">Interact</span></pre>
@@ -118,8 +118,8 @@ loadScripts(document, 'script');</script>
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(com.company.personnages.Perso,com.company.plateau.Plateau)">interact</a></span>&#8203;(<a href="../personnages/Perso.html" title="class in com.company.personnages">Perso</a>&nbsp;perso,
-<a href="Plateau.html" title="class in com.company.plateau">Plateau</a>&nbsp;plateau)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#interact(com.company.heroes.Hero,com.company.board.Plateau)">interact</a></span>&#8203;(<a href="../personnages/Perso.html" title="class in com.company.heroes">Perso</a>&nbsp;hero,
+<a href="Plateau.html" title="class in com.company.board">Plateau</a>&nbsp;board)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -141,9 +141,9 @@ loadScripts(document, 'script');</script>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="interact(com.company.personnages.Perso,com.company.plateau.Plateau)">interact</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">interact</span>&#8203;(<span class="arguments"><a href="../personnages/Perso.html" title="class in com.company.personnages">Perso</a>&nbsp;perso,
-<a href="Plateau.html" title="class in com.company.plateau">Plateau</a>&nbsp;plateau)</span></div>
+<h3><a id="interact(com.company.heroes.Hero,com.company.board.Plateau)">interact</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">interact</span>&#8203;(<span class="arguments"><a href="../personnages/Perso.html" title="class in com.company.heroes">Perso</a>&nbsp;hero,
+<a href="Plateau.html" title="class in com.company.board">Plateau</a>&nbsp;board)</span></div>
 </section>
 </li>
 </ul>
