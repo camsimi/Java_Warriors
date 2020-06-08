@@ -18,10 +18,10 @@ public abstract class Hero {
     private String name;
     private int strength;
     private int life;
-    private final int minStrength;
-    private final int maxStrength;
-    private final int minLife;
-    private final int maxLife;
+    private final int MINSTRENGTH;
+    private final int MAXSTRENGTH;
+    private final int MINLIFE;
+    private final int MAXLIFE;
     private Potion potion;
     private int posPlayer;
 
@@ -31,19 +31,19 @@ public abstract class Hero {
      * @param pName       de type chaîne de caractère
      * @param pLife       de type entier
      * @param pStrength   de type entier
-     * @param minStrength de type entier
-     * @param maxStrength de type entier
-     * @param minLife     de type entier
-     * @param maxLife     de type entier
+     * @param MINSTRENGTH de type entier
+     * @param MAXSTRENGTH de type entier
+     * @param MINLIFE     de type entier
+     * @param MAXLIFE     de type entier
      */
-    public Hero(String pName, int pLife, int pStrength, int minStrength, int maxStrength, int minLife, int maxLife) {
+    public Hero(String pName, int pLife, int pStrength, int MINSTRENGTH, int MAXSTRENGTH, int MINLIFE, int MAXLIFE) {
         this.name = pName;
         this.life = pLife;
         this.strength = pStrength;
-        this.minStrength = minStrength;
-        this.maxStrength = maxStrength;
-        this.minLife = minLife;
-        this.maxLife = maxLife;
+        this.MINSTRENGTH = MINSTRENGTH;
+        this.MAXSTRENGTH = MAXSTRENGTH;
+        this.MINLIFE = MINLIFE;
+        this.MAXLIFE = MAXLIFE;
         this.posPlayer = 0;
     }
 
@@ -76,11 +76,11 @@ public abstract class Hero {
      * @param strength de type entier
      */
     public void setStrength(int strength) {
-        if ((strength >= this.getMinStrength()) && (strength <= this.getMaxStrength())) {
+        if ((strength >= this.getMINSTRENGTH()) && (strength <= this.getMAXSTRENGTH())) {
             this.strength = strength;
-        } else if (strength > this.getMaxStrength()) {
-            System.out.println("Tu ne peux pas dépasser " + this.getMaxStrength() + " points de force d'attaque.");
-            this.strength = this.getMaxStrength();
+        } else if (strength > this.getMAXSTRENGTH()) {
+            System.out.println("Tu ne peux pas dépasser " + this.getMAXSTRENGTH() + " points de force d'attaque.");
+            this.strength = this.getMAXSTRENGTH();
         }
     }
 
@@ -91,11 +91,11 @@ public abstract class Hero {
      * @param life de type entier
      */
     public void setLife(int life) {
-        if (life <= this.getMaxLife() && (life > 0)) {
+        if (life <= this.getMAXLIFE() && (life > 0)) {
             this.life = life;
-        } else if (life > this.getMaxLife()) {
-            System.out.println("Tu ne peux pas dépasser " + this.getMaxLife() + " points de vie.");
-            this.life = this.getMaxLife();
+        } else if (life > this.getMAXLIFE()) {
+            System.out.println("Tu ne peux pas dépasser " + this.getMAXLIFE() + " points de vie.");
+            this.life = this.getMAXLIFE();
         }
         if (life <= 0) {
             this.life = 0;
@@ -107,20 +107,20 @@ public abstract class Hero {
         this.potion = potion;
     }
 
-    public int getMinStrength() {
-        return minStrength;
+    public int getMINSTRENGTH() {
+        return MINSTRENGTH;
     }
 
-    public int getMaxStrength() {
-        return maxStrength;
+    public int getMAXSTRENGTH() {
+        return MAXSTRENGTH;
     }
 
-    public int getMinLife() {
-        return minLife;
+    public int getMINLIFE() {
+        return MINLIFE;
     }
 
-    public int getMaxLife() {
-        return maxLife;
+    public int getMAXLIFE() {
+        return MAXLIFE;
     }
 
     public int getPosition() {

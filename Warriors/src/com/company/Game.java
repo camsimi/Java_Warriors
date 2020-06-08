@@ -33,7 +33,7 @@ public class Game {
     // on instancie un nouvel objet plateau qui contient les cases
     Board board = new Board();
     // attribut qui stocke la longueur du plateau
-    private final int boardLength = board.getBoardLength();
+    private final int BOARDLENGTH = board.getBoardLength();
     // Instancie un nouveau Scanner pour récupérer les inputs
     Scanner sc = new Scanner(System.in);
 
@@ -159,12 +159,12 @@ public class Game {
         // capture exception
         } catch (HeroOutOfBoardException e) {
             // Si exception interceptée le joueur va sur la case 64
-            hero.setPosition(boardLength);
+            hero.setPosition(BOARDLENGTH);
             // on affiche le message d'erreur
             System.out.println(e.getMessage());
         }
         // Si le joueur n'a pas atteint la case 64
-        if (hero.getPosition() != boardLength) {
+        if (hero.getPosition() != BOARDLENGTH) {
             // récupération de la case courante avec la position du joueur
            Square currentSquare = board.getCase(hero.getPosition());
             // Interaction de la case avec le personnage
@@ -248,9 +248,9 @@ public class Game {
                 break;
             }
         // tant que la position du joueur est inférieure à la dernière case du plateau, boucler sur le code précédent
-        } while (hero.getPosition() < boardLength);
+        } while (hero.getPosition() < BOARDLENGTH);
         // Si le joueur est sur la case 64
-        if (hero.getPosition() == boardLength) {
+        if (hero.getPosition() == BOARDLENGTH) {
             // affichage message vaincoeur
             System.out.println("Case 64/64: Tu as gagné!");
             // affichage du choix entre quitter et créer un nouveau personnage
