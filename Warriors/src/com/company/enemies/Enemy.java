@@ -58,7 +58,7 @@ public abstract class Enemy extends Square {
     @Override
     public String toString(){
         return super.toString()
-                + ", il a " + getStrength() + " en force d'attaque et "
+                + ", il a " + getStrength() + " point(s) de force d'attaque et "
                 + getLife() + " point(s) de vie.";
     }
 

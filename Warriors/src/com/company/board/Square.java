@@ -6,7 +6,7 @@ import com.company.heroes.Hero;
  * Permet de construire un objet de type Case par défaut
  */
 public abstract class Square implements Interact {
-    protected String name = "";
+    private String name;
 
     public Square(){
     }

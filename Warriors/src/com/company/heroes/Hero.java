@@ -134,7 +134,6 @@ public abstract class Hero {
     /**
      * Permet au personnage de fuir face à un ennemi
      * Sa position est redéfinie en fonction de l'entier passé en paramètre
-     *
      * @param random de type entier
      */
     public void escape(int random) {
@@ -147,7 +146,6 @@ public abstract class Hero {
 
     /**
      * Décrit l'objet Perso
-     *
      * @return une chaîne de caractère qui représente l'objet
      */
     @Override

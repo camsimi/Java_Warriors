@@ -17,7 +17,7 @@ public abstract class Potion extends Square {
 
     @Override
     public void interact(Hero hero, Board board){
-        System.out.println("Chouette une potion de vie " + getName() + " , " + getPotionLife() + " points de vie supplémentaires!");
+        System.out.println("Chouette une potion de vie " + getName() + ", " + getPotionLife() + " points de vie supplémentaires!");
         hero.setPotion(this);
         addLife(hero);
     }

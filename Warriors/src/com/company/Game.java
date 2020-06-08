@@ -73,14 +73,14 @@ public class Game {
      * @param heroName nom du personnage de type chaîne de caractère
      * @return un personnage de type Perso (Wizard ou Warrior)
      */
-    private Hero instanciatePerso(String heroType, String heroName) {
-        Hero personnage;
+    private Hero instanciateHero(String heroType, String heroName) {
+        Hero hero;
         if (heroType.equals("guerrier")) {
-            personnage = new Warrior(heroName);
+            hero = new Warrior(heroName);
         } else {
-            personnage = new Wizard(heroName);
+            hero = new Wizard(heroName);
         }
-        return personnage;
+        return hero;
     }
 
     /**
@@ -111,7 +111,7 @@ public class Game {
         String heroName = this.chooseName();
         /*Créer un nouveau perso (instancier un Warrior/Wizard à partir de la classe Perso)
         avec en paramètre le type et le nom du perso */
-        Hero hero = this.instanciatePerso(heroType, heroName);
+        Hero hero = this.instanciateHero(heroType, heroName);
         // Afficher les infos du perso en récupérant les objets perso et menu en paramètres.
         this.displayHero(hero, menu);
         // retourne un objet perso de type Perso
